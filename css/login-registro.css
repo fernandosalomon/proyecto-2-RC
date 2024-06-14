@@ -1,0 +1,177 @@
+/*container*/.main-wrapper{ 
+  background-color: #fff;
+  border-radius: 3rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,.35);
+  position: relative;
+  overflow: hidden;
+  width: 768px;
+  max-width: 100%;
+  min-height: 480px;
+}
+
+.main-wrapper form{
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 2rem;
+  height: 100%;
+}
+
+form legend{
+  text-align: center;
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+form label{
+  font-size: 1.4rem;
+  line-height: 2rem;
+  letter-spacing: 0.3px;
+}
+
+form input{
+  background-color: #eee;
+  border: none;
+  margin: 8px 0;
+  padding: 1rem 1.5rem;
+  font-size: 1.3rem !important;
+  border-radius: 8px;
+  width: 100%;
+  outline: none;
+}
+
+form button{
+  font-size: 1.7rem !important;
+  background-color: #512da8 !important;
+  color: #fff !important;
+  padding: 1rem 4.5rem !important;
+
+}
+
+.form-container{
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transition: all 0.6s ease-in-out;
+}
+
+.iniciar-sesion{
+  left: 0;
+  width: 50%;
+  z-index: 2;
+}
+
+.main-wrapper.active .iniciar-sesion{
+  transform: translateX(100%);
+}
+
+.registro{
+  left: 0;
+  width: 50%;
+  opacity: 0;
+  z-index: 1;
+}
+
+.main-wrapper.active .registro{
+  transform: translateX(100%);
+  opacity: 1;
+  z-index: 5;
+  animation: move 0.6s;
+}
+
+@keyframes move {
+  0%, 49.99%{
+    opacity: 0;
+    z-index: 1;
+  }
+  50%, 100%{
+    opacity: 1;
+    z-index: 5;
+  }
+}
+
+.toggle-container{
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  transition: all 0.6s ease-in-out;
+  z-index: 1000;
+  border-radius: 150px 0 0 100px;
+}
+
+.main-wrapper.active .toggle-container{
+  transform: translateX(-100%);
+  border-radius: 0 150px 100px 0;
+}
+
+.toggle{
+  background-color: rgb(30, 86, 245);
+  height: 100%;
+  background: linear-gradient(to right, #2A293E, #362A60);
+  color: #fff;
+  position: relative;
+  left: -100%;
+  height: 100%;
+  width: 200%;
+  transform: translateX(0);
+  transition: all 0.6s ease-in-out;
+}
+
+.main-wrapper.active .toggle{
+  transform: translate(50%);
+}
+
+.toggle-panel{
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 3rem;
+  text-align: center;
+  top: 0;
+  transform: translateX(0);
+  transition: all 0.6s ease-in-out;
+}
+
+.toggle-panel h2{
+  font-size: 4rem;
+  margin-bottom: 2rem;
+}
+
+.toggle-panel p{
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+}
+
+.toggle-panel button{
+  font-size: 1.7rem !important;
+  background-color: #512da8 !important;
+  color: #fff !important;
+  padding: 1rem 4.5rem !important;
+}
+
+.toggle-left{
+  transform: translateX(-200%);
+}
+
+.main-wrapper.active .toggle-left{
+  transform: translateX(0);
+}
+
+.toggle-right{
+  right: 0;
+  transform: translateX(0);
+}
+
+.main-wrapper.active .toggle-right{
+  transform: translateX(200%);
+}

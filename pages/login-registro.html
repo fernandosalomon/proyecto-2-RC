@@ -47,6 +47,62 @@
     </nav>
   </header>
 
+  <main>
+    <div class="container main-wrapper mt-4" id="mainWrapper">
+      <div class="form-container registro">
+        <form>
+          <legend>Registro</legend>
+          <div class="mb-3 w-75">
+            <label for="idNombreRegistro" class="form-label">Nombre</label>
+            <input type="email" class="form-control" id="idNombreRegistro">
+          </div>
+          <div class="mb-3 w-75">
+            <label for="idEmailRegistro" class="form-label">Correo Electrónico</label>
+            <input type="email" class="form-control" id="idEmailRegistro" aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3 w-75">
+            <label for="idPasswordRegistro" class="form-label">Contraseña</label>
+            <input type="password" class="form-control" id="idPasswordRegistro">
+          </div>
+          <div class="mb-3 w-75">
+            <label for="idRepetirPasswordRegistro" class="form-label">Repetir contraseña</label>
+            <input type="password" class="form-control" id="idRepetirPasswordRegistro">
+          </div>
+          <button type="submit" class="btn">Registrarse</button>
+        </form>
+      </div>
+      <div class="form-container iniciar-sesion">
+        <form>
+          <legend>Iniciar Sesión</legend>
+          <div class="mb-3 w-75">
+            <label for="idEmailInicioSesion" class="form-label">Correo Electrónico</label>
+            <input type="email" class="form-control" id="idEmailInicioSesion" aria-describedby="emailHelp">
+          </div>
+          <div class="mb-3 w-75">
+            <label for="idPasswordInicioSesion" class="form-label">Contraseña</label>
+            <input type="password" class="form-control" id="idPasswordInicioSesion">
+          </div>
+          <button type="submit" class="btn">Iniciar Sesión</button>
+        </form>
+      </div>
+
+      <div class="toggle-container">
+        <div class="toggle">
+          <div class="toggle-panel toggle-left">
+            <h2> Bienvenido de nuevo</h2>
+            <p>Inicia sesión para continuar con tus compras favoritas de zapatillas.</p>
+            <button type="button" class="btn" id="idBtnInicioSesion">Ingresar</button>
+          </div>
+          <div class="toggle-panel toggle-right">
+            <h2>¿Aún no eres miembro?</h2>
+            <p>Regístrate y descubre las últimas tendencias y ofertas exclusivas.</p>
+            <button type="button" class="btn" id="idBtnRegistro">Registrarse</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   <script src="../js/navbar.js"></script>
   <script src="../js/login-registro.js"></script>
