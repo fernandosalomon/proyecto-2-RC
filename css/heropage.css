@@ -16,8 +16,7 @@ main{
 }
 
 .hero-text__container{
-  width: 70%;
-  padding: 0 1rem;
+  width: 40%;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -27,7 +26,6 @@ main{
 .hero-text__container h2{
   font-size: 4rem;
   letter-spacing: 0.2rem;
-  padding-right: 5rem;
 }
 
 .hero-text__container p{
@@ -41,22 +39,29 @@ main{
   padding: 0.8rem 1.5rem;
   width: 60%;
   align-self: flex-start;
+  background-color: #512da8 !important;
+  color: #fff;
+}
+
+.producto-destacado-hero{
+  width: 60%;
 }
 
 .hero-product__container{
-  width: 80%;
+  width: 100%;
   object-fit: cover;
   padding: 0 1.5rem 0 0;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(to left, rgb(108,180,238),#fff);
-  border-radius: 200px;
+  border-radius: 280px;
   z-index: -1;
 }
+
 
 .hero-product__container img{
   width: 100%;
   transform: translateX(-60px) scaleX(-1) rotate(20deg) ;
+  filter: drop-shadow(-8px 30px 40px #512de8)
   
 }
 
@@ -66,22 +71,29 @@ main{
 }
 
 .hero-product-description{
-  width: 50%;
+  margin-top: 5rem;
   align-self: flex-end;
   z-index: 1;
-
+  display: flex;
+  flex-direction: column;
 }
 
 
 .hero-product-description p{
-  font-size: 2rem;
-  font-weight: 700;
-  text-align: start;
+  font-size: 1.8rem;
+  text-align: end;
   white-space: wrap;
+  font-weight: 700;
 }
 
 .hero-product-description button{
   border-radius: 14px;
   font-size: 1.6rem;
   padding: 0.8rem 1.5rem;
+  background-color: #040307 !important;
+  align-self: flex-end;
+  width: 50%;
+  cursor: pointer;
+  z-index: 1000;
+  color: #fff;
 }
