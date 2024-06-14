@@ -54,15 +54,14 @@ main{
   display: flex;
   flex-direction: column;
   border-radius: 280px;
-  z-index: -1;
 }
 
 
 .hero-product__container img{
   width: 100%;
   transform: translateX(-60px) scaleX(-1) rotate(20deg) ;
-  filter: drop-shadow(-8px 30px 40px #512de8)
-  
+  filter: drop-shadow(-8px 30px 40px #512de8);
+  z-index: -1;
 }
 
 .hero-product__container p{
