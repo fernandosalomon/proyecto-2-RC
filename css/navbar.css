@@ -17,3 +17,43 @@
   font-size: 1.7rem !important;
   letter-spacing: 0.05rem;
 }
+
+i{
+  font-size: 2.5rem;
+}
+
+.dropdown-item{
+  font-size: 1.6rem !important;
+  padding: 0.6rem 1rem; 
+}
+
+.dropdown-menu hr{
+  width: 80%;
+  margin: 10px auto;
+}
+
+.nav-link{
+  position: relative;
+  margin-right: 5px;
+}
+
+.nav-link i{
+  z-index: 2;
+}
+
+.n-elementos-favoritos,
+.n-elementos-carrito{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #252525;
+  color: #fff;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  font-size: 1.3rem;
+  position: absolute;
+  right: -5px;
+  top: 0;
+  z-index: 1;
+}
