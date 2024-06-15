@@ -49,24 +49,26 @@
 
   <main>
     <div class="container main-wrapper mt-4" id="mainWrapper">
-      <div class="form-container registro">
+      <div class="form-container registro px-2">
         <form>
           <legend>Registro</legend>
-          <div class="mb-3 w-75">
+          <div class="mb-3 w-100">
             <label for="idNombreRegistro" class="form-label">Nombre</label>
-            <input type="email" class="form-control" id="idNombreRegistro">
+            <input type="text" class="form-control" id="idNombreRegistro" placeholder="Ingresa tu nombre">
           </div>
-          <div class="mb-3 w-75">
+          <div class="mb-3 w-100">
             <label for="idEmailRegistro" class="form-label">Correo Electrónico</label>
-            <input type="email" class="form-control" id="idEmailRegistro" aria-describedby="emailHelp">
+            <input type="email" class="form-control" id="idEmailRegistro" aria-describedby="emailHelp" placeholder="Ingresa tu email">
           </div>
-          <div class="mb-3 w-75">
-            <label for="idPasswordRegistro" class="form-label">Contraseña</label>
-            <input type="password" class="form-control" id="idPasswordRegistro">
-          </div>
-          <div class="mb-3 w-75">
-            <label for="idRepetirPasswordRegistro" class="form-label">Repetir contraseña</label>
-            <input type="password" class="form-control" id="idRepetirPasswordRegistro">
+          <div class="password-container d-flex gap-3">
+            <div class="mb-3">
+              <label for="idPasswordRegistro" class="form-label">Contraseña</label>
+              <input type="password" class="form-control" id="idPasswordRegistro" placeholder="********">
+            </div>
+            <div class="mb-3">
+              <label for="idRepetirPasswordRegistro" class="form-label">Repetir contraseña</label>
+              <input type="password" class="form-control" id="idRepetirPasswordRegistro" placeholder="********">
+            </div>
           </div>
           <button type="submit" class="btn">Registrarse</button>
         </form>
@@ -76,13 +78,14 @@
           <legend>Iniciar Sesión</legend>
           <div class="mb-3 w-75">
             <label for="idEmailInicioSesion" class="form-label">Correo Electrónico</label>
-            <input type="email" class="form-control" id="idEmailInicioSesion" aria-describedby="emailHelp">
+            <input type="email" class="form-control" id="idEmailInicioSesion" aria-describedby="emailHelp" placeholder="Ingresa tu email">
           </div>
           <div class="mb-3 w-75">
             <label for="idPasswordInicioSesion" class="form-label">Contraseña</label>
-            <input type="password" class="form-control" id="idPasswordInicioSesion">
+            <input type="password" class="form-control" id="idPasswordInicioSesion" placeholder="********">
           </div>
           <button type="submit" class="btn">Iniciar Sesión</button>
+          <a href="" class="mt-5">¿Olvidaste tu contraseña?</a>
         </form>
       </div>
 

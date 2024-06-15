@@ -27,18 +27,18 @@ form legend{
 }
 
 form label{
-  font-size: 1.4rem;
+  font-size: 1.3rem !important;
   line-height: 2rem;
   letter-spacing: 0.3px;
 }
 
 form input{
-  background-color: #eee;
+  background-color: #eee !important;
   border: none;
-  margin: 8px 0;
-  padding: 1rem 1.5rem;
+  margin-bottom: 8px;
+  padding: 1rem 1.5rem !important;
   font-size: 1.3rem !important;
-  border-radius: 8px;
+  border-radius: 16px !important;
   width: 100%;
   outline: none;
 }
@@ -48,6 +48,14 @@ form button{
   background-color: #512da8 !important;
   color: #fff !important;
   padding: 1rem 4.5rem !important;
+
+}
+
+form a{
+  text-decoration: none;
+  color: #000;
+  cursor: pointer;
+  font-size: 1.3rem;
 
 }
 
