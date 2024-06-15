@@ -1,4 +1,6 @@
-/*container*/.main-wrapper{ 
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+.main-wrapper{ 
   background-color: #fff;
   border-radius: 3rem;
   box-shadow: 0 5px 15px rgba(0,0,0,.35);
@@ -23,7 +25,7 @@ form legend{
   text-align: center;
   font-size: 3.5rem;
   font-weight: 700;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 form label{
@@ -35,7 +37,7 @@ form label{
 form input{
   background-color: #eee !important;
   border: none;
-  margin-bottom: 8px;
+  /* margin-bottom: 8px; */
   padding: 1rem 1.5rem !important;
   font-size: 1.3rem !important;
   border-radius: 16px !important;
@@ -182,4 +184,21 @@ form a{
 
 .main-wrapper.active .toggle-right{
   transform: translateX(200%);
+}
+
+.password-requirements{
+  list-style: none;
+  font-size: 1.3rem;
+}
+
+.marker{
+  font-size: 1.5rem;
+}
+
+.marker-valid{
+  color: green; 
+}
+
+.marker-invalid{
+  color: red;
 }

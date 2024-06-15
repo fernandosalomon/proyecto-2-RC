@@ -50,27 +50,45 @@
   <main>
     <div class="container main-wrapper mt-4" id="mainWrapper">
       <div class="form-container registro px-2">
-        <form>
+        <form id="formularioRegistro">
           <legend>Registro</legend>
           <div class="mb-3 w-100">
             <label for="idNombreRegistro" class="form-label">Nombre</label>
             <input type="text" class="form-control" id="idNombreRegistro" placeholder="Ingresa tu nombre">
+            <span class="d-none" id="idNombreRegistroErrorMsg"></span>
           </div>
           <div class="mb-3 w-100">
             <label for="idEmailRegistro" class="form-label">Correo Electrónico</label>
             <input type="email" class="form-control" id="idEmailRegistro" aria-describedby="emailHelp" placeholder="Ingresa tu email">
+            <span class="d-none" id="idEmailRegistroErrorMsg"></span>
           </div>
           <div class="password-container d-flex gap-3">
             <div class="mb-3">
               <label for="idPasswordRegistro" class="form-label">Contraseña</label>
               <input type="password" class="form-control" id="idPasswordRegistro" placeholder="********">
             </div>
-            <div class="mb-3">
+            <div class="mb-1">
               <label for="idRepetirPasswordRegistro" class="form-label">Repetir contraseña</label>
               <input type="password" class="form-control" id="idRepetirPasswordRegistro" placeholder="********">
             </div>
           </div>
-          <button type="submit" class="btn">Registrarse</button>
+          <span class="mb-3 w-100 d-none" id="idPasswordRegistroErrorMsg">
+            <ul class="password-requirements p-0">
+              <li class="d-flex align-items-center">
+                <span class="marker" id="pswc1"></span>
+                <p class="mb-1">Debe contener entre 8 y 16 caracteres</p></li>
+              <li class="d-flex align-items-center">
+                <span class="marker" id="pswc2"></span>
+                <p class="mb-1">Al menos una letra mayuscula</p></li>
+              <li class="d-flex align-items-center">
+                <span class="marker" id="pswc3"></span>
+                <p class="mb-1">Al menos una letra minuscula</p></li>
+              <li class="d-flex align-items-center">
+                <span class="marker" id="pswc4"></span>
+                <p class="mb-1">Al menos un caracter especial</p></li>
+            </ul>
+          </span>
+          <button type="submit" class="btn disabled" id="idBtnRegistro">Registrarse</button>
         </form>
       </div>
       <div class="form-container iniciar-sesion">
@@ -94,12 +112,12 @@
           <div class="toggle-panel toggle-left">
             <h2> Bienvenido de nuevo</h2>
             <p>Inicia sesión para continuar con tus compras favoritas de zapatillas.</p>
-            <button type="button" class="btn" id="idBtnInicioSesion">Ingresar</button>
+            <button type="button" class="btn" id="idgotoInicioSesionBtn">Ingresar</button>
           </div>
           <div class="toggle-panel toggle-right">
             <h2>¿Aún no eres miembro?</h2>
             <p>Regístrate y descubre las últimas tendencias y ofertas exclusivas.</p>
-            <button type="button" class="btn" id="idBtnRegistro">Registrarse</button>
+            <button type="button" class="btn" id="idgotoRegistroBtn">Registrarse</button>
           </div>
         </div>
       </div>
