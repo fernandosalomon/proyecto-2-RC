@@ -240,5 +240,36 @@ btnRegistro.addEventListener("click", (e) => {
     };
 });
 
+const inputEmailIniciarSesion = document.getElementById("idEmailInicioSesion");
+const inputPasswordIniciarSesion = document.getElementById("idPasswordInicioSesion");
+const btnIniciarSesion = document.getElementById("idBtnIniciarSesion");
+const errorMsgInicioSesion = document.getElementById("errorMsgInicioSesión");
+const spinnerSuccessfulLogin = document.getElementById("successfulLogin");
 
+btnIniciarSesion.addEventListener("click", (e) =>{
+  e.preventDefault();
+  usuarioExiste = usuarios.filter( (usuario) => 
+    usuario.email === inputEmailIniciarSesion.value &&
+    usuario.password === inputPasswordIniciarSesion.value
+  )
+  console.log(usuarioExiste);
+  if(usuarioExiste.length){
+    sessionStorage.setItem("usuario", JSON.stringify(usuarioExiste)) || "";
+    spinnerSuccessfulLogin.innerHTML = 
+      `
+      <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      `;
+      spinnerSuccessfulLogin.classList.remove("d-none");
+    setTimeout(() => {
+      location.href = "./productos.html";
+    }, 2000);
+  
+  }else{
+    errorMsgInicioSesion.innerHTML = "El usuario y/o contraseña no son correctos."
+    errorMsgInicioSesion.classList.add("text-danger");
+    errorMsgInicioSesion.classList.remove("d-none");
+  }
+})
 
