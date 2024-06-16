@@ -22,6 +22,7 @@ if(usuario === ""){
   `
 }
 
+if(usuario !== ""){
 const btnCerrarSesion = document.getElementById("idBtnCerrarSesion");
 
 btnCerrarSesion.addEventListener("click", () => {
@@ -30,3 +31,4 @@ btnCerrarSesion.addEventListener("click", () => {
     location.href = "../index.html";
   }, 1000);
 });
+}
