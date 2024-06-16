@@ -1,4 +1,4 @@
-const productos = [
+const ListaProductos = [
   {
   id:1,
   title:"ZAPATILLAS MUNCHEN 24",
@@ -161,4 +161,10 @@ const productos = [
   },
   ];
 
-  console.log(productos);
+const productos = ListaProductos.map(producto => {
+  return {
+  ...producto,
+  bloqueado: false,
+  cantidadStock: 0,
+  }
+});
