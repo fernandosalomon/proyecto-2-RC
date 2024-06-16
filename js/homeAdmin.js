@@ -7,11 +7,14 @@ const btnUsuariosNavbar = document.getElementById("navbarBtnUsuarios");
 const btnProductosNavbar = document.getElementById("navbarBtnProductos");
 const sidepanelPillProductos = document.getElementById("sidepanelPillProductos");
 const sidepanelPillUsuarios = document.getElementById("sidepanelPillUsuarios");
+const btnCrearProductos = document.getElementById("idBtnCrearProductos");
 
 sidepanelPillProductos.innerText = `${productos.length}`;
 sidepanelPillUsuarios.innerText = `${usuarios.length}`;
 
 btnUsuarios.addEventListener("click", () => {
+
+  btnCrearProductos.classList.add("d-none");
 
   thead.innerHTML = `
     <th scope="col">ID</th>
@@ -36,7 +39,10 @@ btnUsuarios.addEventListener("click", () => {
   }).join("");
 });
 
+
 btnProductos.addEventListener("click", () => {
+
+  btnCrearProductos.classList.remove("d-none");
 
   thead.innerHTML = `
     <th scope="col">ID</th>
@@ -66,6 +72,7 @@ btnProductos.addEventListener("click", () => {
 
 btnUsuariosNavbar.addEventListener("click", (e) => {
   e.preventDefault();
+  btnCrearProductos.classList.add("d-none");
 
   thead.innerHTML = `
     <th scope="col">ID</th>
@@ -92,6 +99,7 @@ btnUsuariosNavbar.addEventListener("click", (e) => {
 
 btnProductosNavbar.addEventListener("click", (e) => {
   e.preventDefault();
+  btnCrearProductos.classList.remove("d-none");
 
   thead.innerHTML = `
     <th scope="col">ID</th>
@@ -118,3 +126,4 @@ btnProductosNavbar.addEventListener("click", (e) => {
     `
   }).join("");
 });
+
