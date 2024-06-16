@@ -67,14 +67,21 @@ const mainPanelProductos = () => {
       <td>$${producto.price}</td>
       <td>0</td>
       <td>
-        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#idModalEditarProducto" onclick=editarProducto(${producto.id})><i class="bi bi-pencil-square"></i></button>
-        <button type="button" class="btn" onclick=destacarProducto(${producto.id})>
-          <i class="bi text-warning ${producto.destacado? "bi-star-fill" : "bi-star"}"></i>
-        </button>
-        <button type="button" class="btn" onclick=deshabilitarHabilitarProducto(${producto.id})>
-          <i class="bi ${producto.bloqueado? "bi-exclamation":"bi-ban"}"></i>
-        </button>
-        <button type="button" class="btn btn-danger" onclick=eliminarProducto(${producto.id})><i class="bi bi-trash"></i></button>
+        <div class="container">
+          <div class="row">
+            <button type="button" class="btn col-12 col-md-6 col-lg-3" data-bs-toggle="modal" data-bs-target="#idModalEditarProducto" onclick=editarProducto(${producto.id})>
+              <i class="bi bi-pencil-square"></i>
+            </button>
+            <button type="button" class="btn col-12 col-md-6 col-lg-3" onclick=destacarProducto(${producto.id})>
+              <i class="bi text-warning ${producto.destacado? "bi-star-fill" : "bi-star"}"></i>
+            </button>
+            <button type="button" class="btn col-12 col-md-6 col-lg-3" onclick=deshabilitarHabilitarProducto(${producto.id})>
+              <i class="bi ${producto.bloqueado? "bi-exclamation":"bi-ban"}"></i>
+            </button>
+            <button type="button" class="btn btn-danger col-12 col-md-6 col-lg-3" onclick=eliminarProducto(${producto.id})>
+              <i class="bi bi-trash"></i></button>
+            </div>
+        </div>
       </td>
     </tr>
     `
