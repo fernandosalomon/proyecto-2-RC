@@ -42,3 +42,7 @@ td{
 .bi-plus-square{
   font-size: 3.5rem !important;
 }
+
+.object-cover{
+  object-fit: cover;
+}

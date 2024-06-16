@@ -68,8 +68,8 @@
         </div>
         <div class="main-panel col-12 col-lg-8 p-3">
           <div class="my-auto" id="mainPanelWrapper">
-            <div class="d-flex justify-content-end me-3 d-none" id="idBtnCrearProductos">
-              <button type="button" class="btn">
+            <div class="d-flex justify-content-end me-3 d-none" id="idBtnCrearProductosWrapper">
+              <button type="button" class="btn" id="idBtnCrearProductos" data-bs-toggle="modal" data-bs-target="#idModalCrearProducto">
                 <i class="bi bi-plus-square"></i>
               </button>
             </div>
@@ -82,8 +82,15 @@
       </div>
       <!-- Modal Editar Usuario -->
       <div class="modal fade" id="idModalEditarUsuario" tabindex="-1" aria-labelledby="idModalEditarUsuario" aria-hidden="true">
-        <div class="modal-dialog" id="idModalEditarUsuarioBody">
-        </div>
+        <div class="modal-dialog" id="idModalEditarUsuarioBody"></div>
+      </div>
+      <!-- Modal Editar Producto -->
+      <div class="modal fade" id="idModalEditarProducto" tabindex="-1" aria-labelledby="idModalEditarProducto" aria-hidden="true">
+        <div class="modal-dialog" id="idModalEditarProductoBody"></div>
+      </div>
+       <!-- Modal Crear Producto -->
+       <div class="modal fade" id="idModalCrearProducto" tabindex="-1" aria-labelledby="idModalCrearProducto" aria-hidden="true">
+        <div class="modal-dialog" id="idModalCrearProductoBody"></div>
       </div>
     </div>
   </main>
