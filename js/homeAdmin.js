@@ -5,7 +5,11 @@ const tbody = document.getElementById("mainPanelTbody");
 const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 const btnUsuariosNavbar = document.getElementById("navbarBtnUsuarios");
 const btnProductosNavbar = document.getElementById("navbarBtnProductos");
+const sidepanelPillProductos = document.getElementById("sidepanelPillProductos");
+const sidepanelPillUsuarios = document.getElementById("sidepanelPillUsuarios");
 
+sidepanelPillProductos.innerText = `${productos.length}`;
+sidepanelPillUsuarios.innerText = `${usuarios.length}`;
 
 btnUsuarios.addEventListener("click", () => {
 
