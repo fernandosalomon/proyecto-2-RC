@@ -61,7 +61,7 @@ const productos = [
   description:"No necesitas mucho para salir a correr. Con un snack, una lista de reproducción y estas zapatillas de running adidas correrás por varios kilómetros. Pureboost son unas zapatillas de entrenamiento ultracómodas que le inyéctan amortiguación y respuesta a tus carreras cortas diarias. adidas BOOST ofrece un increíble retorno de energía con cada paso, y la suela de caucho Stretchweb se flexiona debajo del pie para energizar cada paso que das.",
   price:115.99,
   image:"../img/productos/008.png",
-  category: "men",
+  category: "man",
   },
   {
   id:9,
@@ -69,7 +69,7 @@ const productos = [
   description:"Las aventuras cotidianas requieren de unas zapatillas que puedan seguirte el ritmo. Con una mediasuela Cloudfoam para una amortiguación y comodidad superiores, las zapatillas adidas Racer TR23 responden a ese llamado. Ya sea que estés navegando las calles de la ciudad o descansando en tu cafetería favorita, estas zapatillas de corte bajo te brindan soporte y estilo todo el día. Este producto contiene al menos un 20% de material reciclado. Utilizando materiales reciclados reducimos los residuos, nuestra dependencia de los recursos finitos y la huella que generan los productos que fabricamos.",
   price:114.99,
   image:"../img/productos/009.png",
-  category: "men",
+  category: "man",
   },
   {
   id:10,
@@ -77,7 +77,7 @@ const productos = [
   description:"Un favorito de los sneakerheads y la moda urbana desde hace medio siglo, este calzado de fútbol de los años 60 aún no ha terminado de escribir su historia. Estas zapatillas son una reedición directa de las Gazelle de 1991 actualizadas con texturas, materiales, y proporciones auténticos. La parte superior está hecha de nobuk y luce un ribete en el mismo tono y letras plateadas.",
   price:183.99,
   image:"../img/productos/010.png",
-  category: "men",
+  category: "man",
   },
   {
   id:11,
