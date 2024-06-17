@@ -5,7 +5,7 @@ const favorito = JSON.parse(localStorage.getItem("favorito")) || [];
 
 if(usuario === ""){
   userOptions.innerHTML = `
-  <button type="button" class="btn btn-danger btn-navbar__ingresar">Ingresar</button>
+  <button type="button" class="btn-1">Ingresar</button>
   `
 }else{
   userOptions.innerHTML = `

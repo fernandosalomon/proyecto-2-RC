@@ -7,12 +7,6 @@
   width: 100%;
 }
 
-.btn-navbar__ingresar{
-  border-radius: 14px;
-  font-size: 1.7rem;
-  padding: 0.8rem 1.5rem;
-}
-
 .nav-link{
   font-size: 1.7rem !important;
   letter-spacing: 0.05rem;
@@ -57,3 +51,21 @@ i{
   top: 0;
   z-index: 1;
 }
+
+.btn-1{
+  background-color: #512da8;
+  color: #fff;
+  padding: 1.2rem 3rem;
+  font-size: 1.7rem;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.btn-1:hover{
+  background-color:  #44258b;
+  transition: all 0.1s ease-in-out;
+  font-weight: 500;
+}
+
