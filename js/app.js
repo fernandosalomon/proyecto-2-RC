@@ -177,3 +177,4 @@ const ListaProductos = [
   const productos = JSON.parse(localStorage.getItem("productos")) || [];
   const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
   const usuario = JSON.parse(sessionStorage.getItem("usuario")) || "";
+
