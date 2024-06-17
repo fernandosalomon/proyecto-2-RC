@@ -12,7 +12,8 @@ body{
   overflow: hidden;
   width: 768px;
   max-width: 100%;
-  min-height: 480px;
+  min-height: 500px;
+  margin-top: 90px;
 }
 
 .main-wrapper form{
@@ -192,7 +193,12 @@ form a{
 
 .password-requirements{
   list-style: none;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.password-requirements li{
+  line-height: 0.5rem;
 }
 
 .marker{

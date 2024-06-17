@@ -3,7 +3,7 @@ const userOptions = document.getElementById("userOptions");
 
 if(usuario === ""){
   userOptions.innerHTML = `
-  <button type="button" class="btn-1">Ingresar</button>
+  <button type="button" class="btn-1" id="idBtnIngresar">Ingresar</button>
   `
 }else{
   userOptions.innerHTML = `
@@ -32,3 +32,16 @@ btnCerrarSesion.addEventListener("click", () => {
   }, 1000);
 });
 }
+
+const btnIngresar = document.getElementById("idBtnIngresar");
+
+btnIngresar.addEventListener("click", () => {
+
+  if(location.pathname.search("pages") === -1){
+    location.href = "./pages/login-registro.html";
+  }else{
+    location.href = "./login-registro.html";
+  }
+
+});
+

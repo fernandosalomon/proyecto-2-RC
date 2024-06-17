@@ -75,6 +75,7 @@ const validarEmail = (e) => {
   }
 
   const usuarioExiste = usuarios.filter( (usuario) => usuario.email === e.target.value ).length;
+  
   if(usuarioExiste){
     emailRegistroErrorMsg.innerText = "El email corresponde a un usuario ya registrado";
     validated = false;
@@ -202,8 +203,10 @@ repetirPasswordRegistro.addEventListener("input", validarFormulario);
 
 btnRegistro.addEventListener("click", (e) => {
   e.preventDefault();
-  if(validarFormulario()){
 
+  if(validarFormulario()){
+    const usuarioExiste = usuarios.filter( (usuario) => usuario.email === e.target.value ).length;
+    console.log(usuarioExiste);
     if(usuarioExiste){
 
       if(usuarios.length){

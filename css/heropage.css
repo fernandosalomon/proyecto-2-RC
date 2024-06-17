@@ -33,15 +33,7 @@ main{
   padding-right: 10rem;
 }
 
-.hero-text__container button{
-  border-radius: 14px;
-  font-size: 1.6rem;
-  padding: 0.8rem 1.5rem;
-  width: 60%;
-  align-self: flex-start;
-  background-color: #512da8 !important;
-  color: #fff;
-}
+
 
 .producto-destacado-hero{
   width: 60%;
@@ -85,14 +77,43 @@ main{
   font-weight: 700;
 }
 
-.hero-product-description button{
-  border-radius: 14px;
-  font-size: 1.6rem;
-  padding: 0.8rem 1.5rem;
-  background-color: #040307 !important;
-  align-self: flex-end;
-  width: 50%;
-  cursor: pointer;
-  z-index: 1000;
+.btn-2{
+  background-color: #252525;
   color: #fff;
+  padding: 1rem 4.5rem;
+  font-size: 1.7rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  width: 50%;
+  align-self: flex-end;
+  z-index: 1000;
+}
+
+.btn-2:hover,
+.btn-2:focus{
+  background-color:  #040307;
+  transition: all 0.1s ease-in-out;
+  font-weight: 500;
+}
+
+.btn-3{
+  background-color: #512da8;
+  color: #fff;
+  padding: 1rem 4.5rem;
+  font-size: 1.7rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  width: 60%;
+  align-items: start;
+}
+
+.btn-3:hover,
+.btn-3:focus{
+  background-color:  #44258b;
+  transition: all 0.1s ease-in-out;
+  font-weight: 500;
 }
