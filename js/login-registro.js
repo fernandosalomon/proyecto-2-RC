@@ -207,8 +207,8 @@ btnRegistro.addEventListener("click", (e) => {
   if(validarFormulario()){
     const usuarioExiste = usuarios.filter( (usuario) => usuario.email === e.target.value ).length;
     console.log(usuarioExiste);
-    if(usuarioExiste){
-
+    if(!usuarioExiste){
+      console.log("Hola");
       if(usuarios.length){
         const nuevoUsuario = {
           id: usuarios[usuarios.length - 1].id + 1,
@@ -217,12 +217,21 @@ btnRegistro.addEventListener("click", (e) => {
           password: passwordRegistro.value,
           role: "user",
           bloqueado: false,
-        }
-  
+        };
+        
+        spinnerSuccessfulLogin.innerHTML = 
+          `
+          <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          `;
+        spinnerSuccessfulLogin.classList.remove("d-none");
         usuarios.push(nuevoUsuario);
         localStorage.setItem("usuarios", JSON.stringify(usuarios));
-        location.href = "./login-registro.html";
+        setTimeout(() => location.href = "./login-registro.html", 1000);
+        
       }else{
+        
         const nuevoUsuario = {
           id: 1,
           nombre: nombreRegistro.value,
@@ -232,9 +241,16 @@ btnRegistro.addEventListener("click", (e) => {
           bloqueado: false,
         }
   
+        spinnerSuccessfulLogin.innerHTML = 
+          `
+          <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          `;
+        spinnerSuccessfulLogin.classList.remove("d-none");
         usuarios.push(nuevoUsuario);
         localStorage.setItem("usuarios", JSON.stringify(usuarios));
-        location.href = "./login-registro.html";
+        setTimeout(() => location.href = "./login-registro.html", 1000);
       };
     }
 
