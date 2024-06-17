@@ -1,5 +1,5 @@
 const userOptions = document.getElementById("userOptions");
-const usuario = JSON.parse(sessionStorage.getItem("usuario")) || "";
+// const usuario = JSON.parse(sessionStorage.getItem("usuario")) || "";
 
 if(usuario === ""){
   userOptions.innerHTML = `

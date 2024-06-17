@@ -1,4 +1,4 @@
-const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+// const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
 const formularioRegistro = document.getElementById("formularioRegistro");
 
@@ -263,7 +263,7 @@ btnIniciarSesion.addEventListener("click", (e) =>{
       `;
       spinnerSuccessfulLogin.classList.remove("d-none");
     setTimeout(() => {
-      location.href = "./productos.html";
+      location.href = (usuarioExiste[0].role === "administrador")? "./home-admin.html":"./productos.html";
     }, 2000);
   
   }else{

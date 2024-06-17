@@ -8,6 +8,7 @@ main{
   flex: 1;
   display: flex;
   flex-direction: column;
+  margin-top: 90px;
 }
 
 .main-wrapper{
@@ -45,4 +46,8 @@ td{
 
 .object-cover{
   object-fit: cover;
+}
+
+.nav-link{
+  cursor: pointer;
 }

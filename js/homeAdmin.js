@@ -2,7 +2,6 @@ const btnUsuarios = document.getElementById("idSidepanelBtnUsuarios");
 const btnProductos = document.getElementById("idSidepanelBtnProductos");
 const thead = document.getElementById("mainPanelThead");
 const tbody = document.getElementById("mainPanelTbody");
-const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 const btnUsuariosNavbar = document.getElementById("navbarBtnUsuarios");
 const btnProductosNavbar = document.getElementById("navbarBtnProductos");
 const sidepanelPillProductos = document.getElementById("sidepanelPillProductos");
@@ -12,7 +11,6 @@ const modalEditarUsuario = document.getElementById("idModalEditarUsuarioBody");
 const modalEditarProducto = document.getElementById("idModalEditarProductoBody");
 const modalCrearProducto = document.getElementById("idModalCrearProductoBody");
 const userRoles = ["usuario", "administrador"];
-const productos = JSON.parse(localStorage.getItem("productos")) || [];
 const productCategories = ["unisex", "man", "woman","children"];
 
 sidepanelPillProductos.innerText = `${productos.length}`;

@@ -1,4 +1,4 @@
-const productos = [
+const productosDB = [
   {
   id:1,
   title:"ZAPATILLAS MUNCHEN 24",
@@ -161,4 +161,8 @@ const productos = [
   },
   ];
 
-  console.log(productos);
+
+
+  const productos = JSON.parse(localStorage.getItem("productos")) || [];
+  const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+  const usuario = JSON.parse(sessionStorage.getItem("usuario")) || "";
