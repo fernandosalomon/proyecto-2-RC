@@ -1,4 +1,4 @@
-const productosDB = [
+const ListaProductos = [
   {
   id:1,
   title:"ZAPATILLAS MUNCHEN 24",
@@ -161,7 +161,18 @@ const productosDB = [
   },
   ];
 
-
+  const productosDB = ListaProductos.map(producto => {
+    return {
+    ...producto,
+    bloqueado: false,
+    cantidadStock: 0,
+    destacado: false,
+    }
+  });
+  
+  if(JSON.parse(localStorage.getItem("productos")) === null){
+    localStorage.setItem("productos", JSON.stringify(productosDB))
+  };
 
   const productos = JSON.parse(localStorage.getItem("productos")) || [];
   const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];

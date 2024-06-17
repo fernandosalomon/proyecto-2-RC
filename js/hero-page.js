@@ -5,9 +5,9 @@ const priceProductoDestacado = document.getElementById("idHeroProductPrize");
 
 const productoDestacado = productos.filter( (producto) => producto.destacado);
 
-console.log(productoDestacado);
+const productoDestacadoImgURL = "./" + productoDestacado[0].image.split("/").splice(1).join("/");
 
-imgProductoDestacado.src = productoDestacado[0].image;
+imgProductoDestacado.src = productoDestacadoImgURL;
 imgProductoDestacado.alt = productoDestacado[0].title;
 titleProductoDestacado.innerText = productoDestacado[0].title;
 priceProductoDestacado.innerHTML = `$${productoDestacado[0].price}`;
