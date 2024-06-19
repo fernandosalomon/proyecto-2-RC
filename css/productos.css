@@ -1,10 +1,46 @@
-body{
+body {
   display: flex;
   flex-direction: column;
   height: 100vh;
 }
 
-main{
+main {
   margin-top: 120px;
 }
 
+.img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eee;
+  min-height: 250px;
+}
+
+.card-img-top {
+  padding: 0 2rem;
+}
+
+.card-title {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.card-category {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  color: #929292;
+  margin-bottom: 1.2rem;
+}
+
+.card-price {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+}
+
+.card-producto:hover {
+  border: 1px solid black !important;
+  padding: 0.2rem !important;
+  cursor: pointer;
+}
