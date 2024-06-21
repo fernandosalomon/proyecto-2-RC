@@ -1,4 +1,6 @@
+
 const ListaProductos = [
+
   {
   id:1,
   title:"ZAPATILLAS MUNCHEN 24",
@@ -62,6 +64,7 @@ const ListaProductos = [
   price:115.99,
   image:"../img/productos/008.png",
   category: "man",
+
   },
   {
   id:9,
@@ -70,6 +73,7 @@ const ListaProductos = [
   price:114.99,
   image:"../img/productos/009.png",
   category: "man",
+
   },
   {
   id:10,
@@ -78,6 +82,7 @@ const ListaProductos = [
   price:183.99,
   image:"../img/productos/010.png",
   category: "man",
+
   },
   {
   id:11,
