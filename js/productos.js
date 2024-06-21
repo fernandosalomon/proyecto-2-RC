@@ -11,7 +11,9 @@ const slider2 = document.getElementById("slider2");
 const sliderMinPrice = document.getElementById("idSliderMinPrice");
 const sliderMaxPrice = document.getElementById("idSliderMaxPrice");
 const rangeTrack = document.querySelector(".range-track");
-
+const btnRestablecerFiltros = document.getElementById(
+  "idBtnRestablecerFiltros"
+);
 const absoluteMaxPrice = 500;
 
 mainBody.innerHTML = productos
@@ -123,3 +125,31 @@ const aplicarFiltros = () => {
 
 const btnAplicarFiltros = document.getElementById("idBtnAplicarFiltros");
 btnAplicarFiltros.addEventListener("click", aplicarFiltros);
+
+btnRestablecerFiltros.addEventListener("click", () => {
+  slider1.value = 0;
+  slider2.value = 100;
+  filtroHombre.checked = false;
+  filtroMujer.checked = false;
+  filtroChildren.checked = false;
+  mainTitle.innerHTML = "Todos los productos";
+
+  mainBody.innerHTML = productos
+    .map(
+      (producto) =>
+        `
+<div class="card col-12 col-md-6 col-lg-4 p-0 border-0 card-producto" style="width: 32rem;">
+  <div class="img-container">
+    <img src="${producto.image}" class="card-img-top" alt="${producto.title}">
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">${producto.title}</h5>
+    <p class="card-category">${producto.category}</p>
+    <p class="card-price">$${producto.price}</p>
+  </div>
+</div>
+`
+    )
+    .join("");
+  closeModalFiltro.click();
+});
