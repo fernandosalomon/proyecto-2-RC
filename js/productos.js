@@ -1,5 +1,5 @@
 const mainBody = document.getElementById("idMainBody");
-
+const mainTitle = document.getElementById("idMainTitle");
 const filtroHombre = document.getElementById("filtro-genero-hombre");
 const filtroMujer = document.getElementById("filtro-genero-mujer");
 const filtroChildren = document.getElementById("filtro-genero-children");
@@ -63,6 +63,7 @@ const filtroGenero = (productos, genero) => {
 };
 
 const filtroPrecio = (productos, precioMin, precioMax) => {
+  mainTitle.innerHTML = `${mainTitle.innerHTML} > Precios entre: $${precioMin} - $${precioMax}`;
   return productos.filter(
     (producto) =>
       Number(producto.price) > Number(precioMin) &&
@@ -76,15 +77,18 @@ const aplicarFiltros = () => {
   switch (true) {
     case filtroHombre.checked:
       listaProductosFiltrados = filtroGenero(listaProductosFiltrados, "man");
+      mainTitle.innerHTML = "Todos los productos > Hombre";
       break;
     case filtroMujer.checked:
       listaProductosFiltrados = filtroGenero(listaProductosFiltrados, "woman");
+      mainTitle.innerHTML = "Todos los productos > Mujer";
       break;
     case filtroChildren.checked:
       listaProductosFiltrados = filtroGenero(
         listaProductosFiltrados,
         "children"
       );
+      mainTitle.innerHTML = "Todos los productos > Niños";
       break;
   }
 
