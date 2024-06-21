@@ -1,3 +1,10 @@
+.navbar{
+  position: fixed;
+  width: 100%;
+  margin-bottom: 0.5rem;
+  min-height: 75px;
+}
+
 .logo-container{
   width: 150px;
   object-fit: cover;
@@ -55,15 +62,16 @@ i{
 .btn-1{
   background-color: #512da8;
   color: #fff;
-  padding: 1.2rem 3rem;
+  padding: 1rem 4.5rem;
   font-size: 1.7rem;
-  border-radius: 14px;
+  border-radius: 8px;
   border: none;
   cursor: pointer;
   outline: none;
 }
 
-.btn-1:hover{
+.btn-1:hover,
+.btn-1:focus{
   background-color:  #44258b;
   transition: all 0.1s ease-in-out;
   font-weight: 500;

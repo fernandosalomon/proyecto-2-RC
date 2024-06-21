@@ -1,0 +1,53 @@
+body{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-top: 90px;
+}
+
+.main-wrapper{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.panel-control{
+  flex: 1;
+  margin: 1.5rem 0;
+}
+
+.sidebar{
+  min-height: 100%;
+}
+
+.main-panel{
+  min-height: 100%;
+  border: 2px solid #eee;
+  border-radius: 14px;
+} 
+
+th{
+  font-size: 1.4rem;
+}
+
+td{
+  font-size: 1.3rem;
+}
+
+.bi-plus-square{
+  font-size: 3.5rem !important;
+}
+
+.object-cover{
+  object-fit: cover;
+}
+
+.nav-link{
+  cursor: pointer;
+}
