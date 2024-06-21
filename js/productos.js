@@ -17,3 +17,25 @@ mainBody.innerHTML = productos
 `
   )
   .join("");
+
+const slider1 = document.getElementById("slider1");
+const slider2 = document.getElementById("slider2");
+const sliderMinPrice = document.getElementById("idSliderMinPrice");
+const sliderMaxPrice = document.getElementById("idSliderMaxPrice");
+const rangeTrack = document.querySelector(".range-track");
+
+const absoluteMaxPrice = 500000;
+
+function updateRangeTrack() {
+  const min = Math.min(slider1.value, slider2.value);
+  const max = Math.max(slider1.value, slider2.value);
+  rangeTrack.style.left = min + "%";
+  rangeTrack.style.width = max - min + "%";
+  sliderMinPrice.innerHTML = `$${(min * absoluteMaxPrice) / 100}`;
+  sliderMaxPrice.innerHTML = `$${(max * absoluteMaxPrice) / 100}`;
+}
+
+slider1.addEventListener("input", updateRangeTrack);
+slider2.addEventListener("input", updateRangeTrack);
+
+updateRangeTrack(); // Initial update

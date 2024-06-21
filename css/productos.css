@@ -1,11 +1,6 @@
 body {
   display: flex;
   flex-direction: column;
-  height: 100vh;
-}
-
-main {
-  margin-top: 120px;
 }
 
 .img-container {
@@ -43,4 +38,45 @@ main {
   border: 1px solid black !important;
   padding: 0.2rem !important;
   cursor: pointer;
+}
+
+.offcanvas {
+  z-index: 5002;
+}
+
+.slider-container {
+  width: 100%;
+}
+.range-slider {
+  width: 100%;
+  pointer-events: none;
+  position: relative;
+  min-height: 40px;
+}
+.range-slider input {
+  pointer-events: all;
+  position: absolute;
+  top: 10px;
+  right: 0;
+  z-index: 1;
+}
+
+.range-slider input::-webkit-slider-runnable-track {
+  height: 0;
+}
+
+.range-slider input[type="range"] {
+  width: 100%;
+}
+.range-slider .range-track {
+  height: 5px;
+  background: #007bff;
+  position: absolute;
+  top: 15px;
+  right: 0;
+  z-index: 0;
+}
+
+.slider-min-price {
+  min-width: 30px;
 }
