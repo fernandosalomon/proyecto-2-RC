@@ -13,7 +13,7 @@ if (usuario === "") {
       <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
         <i class="bi bi-person-circle"></i>
       </a>
-      <ul class="dropdown-menu dropend">
+      <ul class="dropdown-menu dropdown-menu-end">
         <li><a class="dropdown-item" href="#">Editar Usuario</a></li>
         <hr />
         <li><a class="dropdown-item" href="#" id="idBtnCerrarSesion">Cerrar Sesión</a></li>
@@ -29,7 +29,11 @@ if (usuario !== "") {
   btnCerrarSesion.addEventListener("click", () => {
     sessionStorage.removeItem("usuario");
     setTimeout(() => {
-      location.href = "../index.html";
+      if (location.pathname.search("pages") === -1) {
+        location.href = "./index.html";
+      } else {
+        location.href = "../index.html";
+      }
     }, 1000);
   });
 }
