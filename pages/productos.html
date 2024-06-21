@@ -73,8 +73,13 @@
           class="main-header d-flex justify-content between align-items-center"
         >
           <p class="main-title fs-1 mt-4" id="idMainTitle">Todos los productos</p>
-          <div class="main-header-options ms-auto">
-            <button class="btn"><i class="bi bi-search"></i></button>
+          <div class="main-header-options ms-auto d-flex" id="idMainHeaderOptions">
+            <div class="buscar-producto d-flex justify-content-start align-items-center">
+              <form>
+                <input class="form-control me-2 d-none fs-3" type="search" placeholder="Buscar Producto" aria-label="buscarProducto" id="idInputBuscarProducto">
+              </form>
+              <button class="btn"><i class="bi bi-search" id="idBtnBuscarProducto"></i></button>
+            </div>
             <button class="btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasFiltrarProductos" aria-controls="offcanvasFiltrarProductos"><i class="bi bi-sliders"></i></button>
           </div>
         </div>
