@@ -3,11 +3,11 @@ const usuario = JSON.parse(sessionStorage.getItem("usuario")) || "";
 const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 const favorito = JSON.parse(localStorage.getItem("favorito")) || [];
 
-if(usuario === ""){
+if (usuario === "") {
   userOptions.innerHTML = `
   <button type="button" class="btn-1">Ingresar</button>
-  `
-}else{
+  `;
+} else {
   userOptions.innerHTML = `
   <ul class="navbar-nav">
     <li class="nav-item dropdown">
@@ -33,32 +33,32 @@ if(usuario === ""){
       </a>
     </li> 
   </ul>  
-  `
+  `;
+  const floatingBubbleCarrito = document.getElementById("idElementsInCarrito");
+  const floatingBubbleFavorito = document.getElementById(
+    "idElementsInFavorite"
+  );
+
+  if (carrito.length) {
+    floatingBubbleCarrito.innerText = Number(carrito.length);
+    floatingBubbleCarrito.classList.remove("d-none");
+  } else {
+    floatingBubbleCarrito.classList.add("d-none");
+  }
+
+  if (favorito.length) {
+    floatingBubbleFavorito.innerText = Number(favorito.length);
+    floatingBubbleFavorito.classList.remove("d-none");
+  } else {
+    floatingBubbleFavorito.classList.add("d-none");
+  }
+
+  const btnCerrarSesion = document.getElementById("idBtnCerrarSesion");
+
+  btnCerrarSesion.addEventListener("click", () => {
+    sessionStorage.removeItem("usuario");
+    setTimeout(() => {
+      location.href = "../index.html";
+    }, 1000);
+  });
 }
-
-const floatingBubbleCarrito = document.getElementById("idElementsInCarrito");
-const floatingBubbleFavorito = document.getElementById("idElementsInFavorite");
-
-
-if(carrito.length){
-  floatingBubbleCarrito.innerText = Number(carrito.length);
-  floatingBubbleCarrito.classList.remove("d-none");
-}else{
-  floatingBubbleCarrito.classList.add("d-none");
-}
-
-if(favorito.length){
-  floatingBubbleFavorito.innerText = Number(favorito.length);
-  floatingBubbleFavorito.classList.remove("d-none");
-}else{
-  floatingBubbleFavorito.classList.add("d-none");
-}
-
-const btnCerrarSesion = document.getElementById("idBtnCerrarSesion");
-
-btnCerrarSesion.addEventListener("click", () => {
-  sessionStorage.removeItem("usuario");
-  setTimeout(() => {
-    location.href = "../index.html";
-  }, 1000);
-});
