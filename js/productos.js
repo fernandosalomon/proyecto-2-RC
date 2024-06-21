@@ -1,5 +1,19 @@
 const mainBody = document.getElementById("idMainBody");
 
+const filtroHombre = document.getElementById("filtro-genero-hombre");
+const filtroMujer = document.getElementById("filtro-genero-mujer");
+const filtroChildren = document.getElementById("filtro-genero-children");
+const closeModalFiltro = document.querySelector(
+  '[data-bs-dismiss="offcanvas"]'
+);
+const slider1 = document.getElementById("slider1");
+const slider2 = document.getElementById("slider2");
+const sliderMinPrice = document.getElementById("idSliderMinPrice");
+const sliderMaxPrice = document.getElementById("idSliderMaxPrice");
+const rangeTrack = document.querySelector(".range-track");
+
+const absoluteMaxPrice = 500;
+
 mainBody.innerHTML = productos
   .map(
     (producto) =>
@@ -18,14 +32,6 @@ mainBody.innerHTML = productos
   )
   .join("");
 
-const slider1 = document.getElementById("slider1");
-const slider2 = document.getElementById("slider2");
-const sliderMinPrice = document.getElementById("idSliderMinPrice");
-const sliderMaxPrice = document.getElementById("idSliderMaxPrice");
-const rangeTrack = document.querySelector(".range-track");
-
-const absoluteMaxPrice = 500000;
-
 function updateRangeTrack() {
   const min = Math.min(slider1.value, slider2.value);
   const max = Math.max(slider1.value, slider2.value);
@@ -39,3 +45,77 @@ slider1.addEventListener("input", updateRangeTrack);
 slider2.addEventListener("input", updateRangeTrack);
 
 updateRangeTrack(); // Initial update
+
+const filtroGenero = (productos, genero) => {
+  switch (true) {
+    case genero === "man":
+      return productos.filter((producto) => producto.category === "man");
+      break;
+    case genero === "woman":
+      return productos.filter((producto) => producto.category === "woman");
+      break;
+    case genero === "children":
+      return productos.filter((producto) => producto.category === "children");
+      break;
+    default:
+      return productos;
+  }
+};
+
+const filtroPrecio = (productos, precioMin, precioMax) => {
+  return productos.filter(
+    (producto) =>
+      Number(producto.price) > Number(precioMin) &&
+      Number(producto.price) < Number(precioMax)
+  );
+};
+
+const aplicarFiltros = () => {
+  let listaProductosFiltrados = [...productos];
+
+  switch (true) {
+    case filtroHombre.checked:
+      listaProductosFiltrados = filtroGenero(listaProductosFiltrados, "man");
+      break;
+    case filtroMujer.checked:
+      listaProductosFiltrados = filtroGenero(listaProductosFiltrados, "woman");
+      break;
+    case filtroChildren.checked:
+      listaProductosFiltrados = filtroGenero(
+        listaProductosFiltrados,
+        "children"
+      );
+      break;
+  }
+
+  precioMin = sliderMinPrice.innerText.split("$")[1];
+  precioMax = sliderMaxPrice.innerText.split("$")[1];
+
+  let listaProductosFiltradosPrecio = filtroPrecio(
+    listaProductosFiltrados,
+    precioMin,
+    precioMax
+  );
+
+  mainBody.innerHTML = listaProductosFiltradosPrecio
+    .map(
+      (producto) =>
+        `
+<div class="card col-12 col-md-6 col-lg-4 p-0 border-0 card-producto" style="width: 32rem;">
+  <div class="img-container">
+    <img src="${producto.image}" class="card-img-top" alt="${producto.title}">
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">${producto.title}</h5>
+    <p class="card-category">${producto.category}</p>
+    <p class="card-price">$${producto.price}</p>
+  </div>
+</div>
+`
+    )
+    .join("");
+  closeModalFiltro.click();
+};
+
+const btnAplicarFiltros = document.getElementById("idBtnAplicarFiltros");
+btnAplicarFiltros.addEventListener("click", aplicarFiltros);
