@@ -160,5 +160,3 @@ const productos = [
   category: "children",
   },
   ];
-
-  console.log(productos);
