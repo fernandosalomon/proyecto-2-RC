@@ -1,11 +1,13 @@
 const userOptions = document.getElementById("userOptions");
 // const usuario = JSON.parse(sessionStorage.getItem("usuario")) || "";
 
-if(usuario === ""){
+if (usuario === "") {
   userOptions.innerHTML = `
+
   <button type="button" class="btn-1" id="idBtnIngresar">Ingresar</button>
   `
 }else{
+
   userOptions.innerHTML = `
   <ul class="navbar-nav">
     <li class="nav-item dropdown">
@@ -19,8 +21,11 @@ if(usuario === ""){
       </ul>
     </li>
   </ul>  
-  `
-}
+  `;
+  const floatingBubbleCarrito = document.getElementById("idElementsInCarrito");
+  const floatingBubbleFavorito = document.getElementById(
+    "idElementsInFavorite"
+  );
 
 if(usuario !== ""){
 const btnCerrarSesion = document.getElementById("idBtnCerrarSesion");
@@ -44,4 +49,5 @@ btnIngresar.addEventListener("click", () => {
   }
 
 });
+
 
