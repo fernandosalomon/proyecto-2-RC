@@ -52,6 +52,7 @@ body {
   pointer-events: none;
   position: relative;
   min-height: 40px;
+  margin: 0 1.5rem;
 }
 .range-slider input {
   pointer-events: all;
@@ -70,7 +71,7 @@ body {
 }
 .range-slider .range-track {
   height: 5px;
-  background: #007bff;
+  background: #512da8;
   position: absolute;
   top: 15px;
   right: 0;
@@ -79,4 +80,71 @@ body {
 
 .slider-min-price {
   min-width: 30px;
+  text-align: start;
+}
+
+.full-range-track {
+  height: 5px;
+  background: #bfafe4;
+  position: absolute;
+  top: 15px;
+  right: 0;
+  z-index: -1;
+  width: 100%;
+  border-radius: 8px;
+}
+
+.barra-buscar-productos:focus,
+.barra-buscar-productos:active {
+  box-shadow: none !important;
+  border-color: transparent !important;
+  outline: none !important;
+}
+
+.btn-aplicar-filtros,
+.btn-restablecer-filtros {
+  padding: 1rem 0.5rem !important;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-aplicar-filtros {
+  background-color: #512da8;
+  color: #fff;
+  font-weight: 400;
+}
+
+.btn-restablecer-filtros {
+  background-color: #252525;
+  color: #fff;
+  font-weight: 400;
+}
+
+.btn-aplicar-filtros:hover {
+  background-color: #4115a8;
+  font-weight: 600;
+}
+
+.btn-restablecer-filtros:hover {
+  background-color: #1a1a1a;
+  font-weight: 600;
+}
+
+input[type="checkbox"] {
+  margin-right: 1rem;
+  border: 0.5px solid #512da8;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #512da8 !important;
+  outline: thick solid rgba(81, 45, 168, 0.3) !important;
+  border: none !important;
+  box-shadow: none;
+}
+
+input[type="checkbox"]:not(:checked) {
+  outline: none !important;
+  border: 0.5px solid #512da8;
+  box-shadow: none;
 }

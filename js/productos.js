@@ -17,7 +17,7 @@ const btnRestablecerFiltros = document.getElementById(
 const absoluteMaxPrice = 500;
 const btnBuscarProducto = document.getElementById("idBtnBuscarProducto");
 const inputBuscarProducto = document.getElementById("idInputBuscarProducto");
-const mainHeaderOptions = document.getElementById("idMainHeaderOptions");
+const barraBuscarProducto = document.getElementById("idBarraBuscarProducto");
 
 mainBody.innerHTML = productos
   .map(
@@ -158,7 +158,6 @@ btnRestablecerFiltros.addEventListener("click", () => {
 });
 
 btnBuscarProducto.addEventListener("click", () => {
-  inputBuscarProducto.classList.remove("d-none");
   inputBuscarProducto.focus();
   inputBuscarProducto.addEventListener("input", (e) => {
     nombreProductoBuscar = e.target.value.trim().toLowerCase();
@@ -184,8 +183,5 @@ btnBuscarProducto.addEventListener("click", () => {
           `
       )
       .join("");
-  });
-  mainHeaderOptions.addEventListener("focusout", () => {
-    inputBuscarProducto.classList.add("d-none");
   });
 });
