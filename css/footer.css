@@ -9,5 +9,8 @@ footer {
 }
 .espacioLogo {
   margin-top: 50px;
-   font-family: "Poppins", sans-serif;
+}
+
+.botonError {
+  color: #512da8;
 }
