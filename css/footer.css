@@ -7,3 +7,7 @@ footer {
   bottom: 0;
   width: 100%;
 }
+.espacioLogo {
+  margin-top: 50px;
+   font-family: "Poppins", sans-serif;
+}
