@@ -6,6 +6,7 @@ footer {
   font-family: "Poppins", sans-serif;
   bottom: 0;
   width: 100%;
+  max-height: 150px;
 }
 .espacioLogo {
   margin-top: 50px;

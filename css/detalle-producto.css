@@ -1,0 +1,46 @@
+.descripcion-producto {
+  text-align: justify;
+}
+
+.btn-favorito {
+  font-size: 3rem;
+}
+
+.btn-talle {
+  background-color: transparent;
+}
+
+.btn-talle:hover {
+  font-weight: bold;
+}
+
+.btn-talle--activo {
+  background-color: #512de8;
+  color: #fff;
+  font-weight: 700;
+  transition: 0.2s ease-in-out;
+  border: 2px solid #3d22aa;
+  box-shadow: none !important;
+}
+
+.btn-agregar-carrito {
+  background-color: #512da8;
+  color: #fff;
+  padding: 1rem 4.5rem;
+  font-size: 1.7rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.btn-agregar-carrito {
+  background-color: #44258b;
+  transition: all 0.1s ease-in-out;
+  font-weight: 500;
+}
+
+.bi-heart-fill {
+  color: #512da8;
+  filter: drop-shadow(2px 1px rgba(0, 0, 0, 0.5));
+}

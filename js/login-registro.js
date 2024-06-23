@@ -271,6 +271,8 @@ btnRegistro.addEventListener("click", (e) => {
           password: passwordRegistro.value,
           role: "user",
           bloqueado: false,
+          carrito: [],
+          favoritos: [],
         };
 
         spinnerSuccessfulLogin.innerHTML = `
@@ -306,7 +308,7 @@ btnIniciarSesion.addEventListener("click", (e) => {
   );
   console.log(usuarioExiste);
   if (usuarioExiste.length) {
-    sessionStorage.setItem("usuario", JSON.stringify(usuarioExiste)) || "";
+    sessionStorage.setItem("usuario", JSON.stringify(usuarioExiste[0])) || "";
     spinnerSuccessfulLogin.innerHTML = `
       <div class="spinner-border" role="status">
         <span class="visually-hidden">Loading...</span>

@@ -8,6 +8,16 @@ if (usuario === "") {
 
   <button type="button" class="btn-1" id="idBtnIngresar">Ingresar</button>
   `;
+
+  const btnIngresar = document.getElementById("idBtnIngresar");
+
+  btnIngresar.addEventListener("click", () => {
+    if (location.pathname.search("pages") === -1) {
+      location.href = "./pages/login-registro.html";
+    } else {
+      location.href = "./login-registro.html";
+    }
+  });
 } else {
   userOptions.innerHTML = `
   <ul class="navbar-nav">
@@ -23,9 +33,7 @@ if (usuario === "") {
     </li>
   </ul>  
   `;
-}
 
-if (usuario !== "") {
   const btnCerrarSesion = document.getElementById("idBtnCerrarSesion");
 
   btnCerrarSesion.addEventListener("click", () => {
@@ -35,13 +43,3 @@ if (usuario !== "") {
     }, 1000);
   });
 }
-
-const btnIngresar = document.getElementById("idBtnIngresar");
-
-btnIngresar.addEventListener("click", () => {
-  if (location.pathname.search("pages") === -1) {
-    location.href = "./pages/login-registro.html";
-  } else {
-    location.href = "./login-registro.html";
-  }
-});

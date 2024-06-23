@@ -21,8 +21,9 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
     <link rel="stylesheet" href="../css/main.css" />
-    <link rel="stylesheet" href="../css/carrito.css" />
     <link rel="stylesheet" href="../css/navbar.css" />
+    <link rel="stylesheet" href="../css/carrito.css" />
+    <link rel="stylesheet" href="../css/footer.css">
   </head>
   <body>
     <header>
@@ -68,10 +69,8 @@
     </header>
 
     <main>
-      <div
-        class="container d-flex justify-content-center align-items-center gap-5 w-100"
-      >
-        <div id="productosCarrito" class="border rounded p-3">
+      <div class="container row gap-5 w-100" id="idMainCarrito">
+        <div id="productosCarrito" class="border rounded p-3 col-8">
           <h2>Productos</h2>
           <table class="table table-borderless fs-4 mt-5">
             <thead>
@@ -85,7 +84,7 @@
             <tbody id="idTbodyProductosCarrito" class="align-middle"></tbody>
           </table>
         </div>
-        <div id="pagoProductosCarrito" class="pago-productos fs-4">
+        <div id="pagoProductosCarrito" class="pago-productos fs-4 col-3">
           <table class="table table-borderless">
             <tbody>
               <tr>
@@ -108,6 +107,44 @@
         </div>
       </div>
     </main>
+
+    <footer>
+      <section class="container">
+        <article class="row">
+          <div class="col-sm-12 col-md-4 text-center py-5">
+            <h6 class="mb-3 fs-3">Nuestras Redes Sociales</h6>
+            <a href="https://es-la.facebook.com/" target="_blank" class="me-2 fs-4"
+              ><i class="fa-brands fa-square-facebook fa-2x text-light"></i
+            ></a>
+            <a href="https://www.instagram.com/" target="_blank" class="me-2 fs-4"
+              ><i class="fa-brands fa-square-instagram fa-2x text-light"></i
+            ></a>
+            <a href="https://x.com/Inicio/" target="_blank" class="me-2 fs-4"
+              ><i class="fa-brands fa-x-twitter fa-2x text-light"></i
+            ></a>
+             <a href="https://ar.linkedin.com/" target="_blank" class="me-2 fs-4"
+              ><i class="fa-brands fa-linkedin fa-2x text-light"></i
+            ></a>
+          </div>
+          <div class="col-sm-12 col-md-4 text-center py-2">
+            <img class="w-50" src="../img/logo.png" alt="imglogo" />
+          </div>
+          <div class="col-sm-12 col-md-4 text-center py-5">
+            
+            <h6 class="pb-5 fs-4">
+              Horarios de Atencion:
+
+              <li>Lunes a viernes de 8:00 a 18:00</li>
+              <li>Sabados de 9:00 a 13:00</li>
+              <li><i class="fa-solid fa-headset fa-fw text-light"></i>(012)3456789</li>
+              
+            </h6>
+          </div>
+          <div>
+         
+        </article>
+      </section>
+    </footer>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

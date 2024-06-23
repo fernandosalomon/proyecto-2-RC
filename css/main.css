@@ -23,6 +23,7 @@ body {
 
 header {
   width: 100%;
+  justify-self: flex-start;
 }
 
 main {
