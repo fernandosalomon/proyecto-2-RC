@@ -13,7 +13,7 @@ if (usuario === "") {
       <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
         <i class="bi bi-person-circle"></i>
       </a>
-      <ul class="dropdown-menu dropend">
+      <ul class="dropdown-menu dropdown-menu-end">
         <li><a class="dropdown-item" href="#">Editar Usuario</a></li>
         <hr />
         <li><a class="dropdown-item" href="#" id="idBtnCerrarSesion">Cerrar Sesión</a></li>
@@ -21,29 +21,31 @@ if (usuario === "") {
     </li>
   </ul>  
   `;
-  const floatingBubbleCarrito = document.getElementById("idElementsInCarrito");
-  const floatingBubbleFavorito = document.getElementById(
-    "idElementsInFavorite"
-  );
 
-  if (usuario !== "") {
-    const btnCerrarSesion = document.getElementById("idBtnCerrarSesion");
+}
 
-    btnCerrarSesion.addEventListener("click", () => {
-      sessionStorage.removeItem("usuario");
-      setTimeout(() => {
+if (usuario !== "") {
+  const btnCerrarSesion = document.getElementById("idBtnCerrarSesion");
+
+  btnCerrarSesion.addEventListener("click", () => {
+    sessionStorage.removeItem("usuario");
+    setTimeout(() => {
+      if (location.pathname.search("pages") === -1) {
+        location.href = "./index.html";
+      } else {
         location.href = "../index.html";
-      }, 1000);
-    });
-  }
-
-  const btnIngresar = document.getElementById("idBtnIngresar");
-
-  btnIngresar.addEventListener("click", () => {
-    if (location.pathname.search("pages") === -1) {
-      location.href = "./pages/login-registro.html";
-    } else {
-      location.href = "./login-registro.html";
-    }
+      }
+    }, 1000);
   });
 }
+
+const btnIngresar = document.getElementById("idBtnIngresar");
+
+btnIngresar.addEventListener("click", () => {
+  if (location.pathname.search("pages") === -1) {
+    location.href = "./pages/login-registro.html";
+  } else {
+    location.href = "./login-registro.html";
+  }
+});
+

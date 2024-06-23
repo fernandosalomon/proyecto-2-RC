@@ -1,135 +1,260 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="description" content="Bienvenido al sitio oficial de ZapasMania. Encontrá en esta tienda online las mejores zapatillas deportiva, creadas con tecnología y diseño.">
-  <meta name="keywords" content="sneakers, ecommerce, shoes, online store">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Bienvenido al sitio oficial de ZapasMania. Encontrá en esta tienda online las mejores zapatillas deportiva, creadas con tecnología y diseño."
+    />
+    <meta name="keywords" content="sneakers, ecommerce, shoes, online store" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZapasMania</title>
+     <link
+
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
       integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-  <title>ZapasMania</title>
-  <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <link rel="stylesheet" href="../css/main.css">
-  <link rel="stylesheet" href="../css/login-registro.css">
-  <link rel="stylesheet" href="../css/navbar.css">
-  <link rel="stylesheet" href="../css/footer.css">
-</head>
-<body>
 
-  <header>
-    <nav class="navbar navbar-expand-lg">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="../index.html">
-          <div class="logo-container">
-            <img src="../img/logo.svg" alt="ZapasMania Logo">
-          </div>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-links" aria-controls="navbar-links" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbar-links">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-5 align-items-center">
-            <li class="nav-item">
-              <a class="nav-link" href="./index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Productos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Nosotros</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contactanos</a>
-            </li>
-            <li>
-              <div class="d-flex gap-4 me-3" id="userOptions"></div>
-            </li> 
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
 
-  <main class="d-flex flex-column justify-content-center align-items-center h-100">
-    <div class="container main-wrapper" id="mainWrapper">
-      <div class="form-container registro px-2">
-        <form id="formularioRegistro">
-          <legend>Registro</legend>
-          <div class="mb-3 w-100">
-            <label for="idNombreRegistro" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="idNombreRegistro" placeholder="Ingresa tu nombre">
-            <span class="d-none" id="idNombreRegistroErrorMsg"></span>
-          </div>
-          <div class="mb-3 w-100">
-            <label for="idEmailRegistro" class="form-label">Correo Electrónico</label>
-            <input type="email" class="form-control" id="idEmailRegistro" aria-describedby="emailHelp" placeholder="Ingresa tu email">
-            <span class="d-none" id="idEmailRegistroErrorMsg"></span>
-          </div>
-          <div class="password-container d-flex gap-3">
-            <div class="mb-3">
-              <label for="idPasswordRegistro" class="form-label">Contraseña</label>
-              <input type="password" class="form-control" id="idPasswordRegistro" placeholder="********">
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/login-registro.css" />
+    <link rel="stylesheet" href="../css/navbar.css" />
+    <link rel="stylesheet" href="../css/footer.css">
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="../index.html">
+            <div class="logo-container">
+              <img src="../img/logo.svg" alt="ZapasMania Logo" />
             </div>
-            <div class="mb-1">
-              <label for="idRepetirPasswordRegistro" class="form-label">Repetir contraseña</label>
-              <input type="password" class="form-control" id="idRepetirPasswordRegistro" placeholder="********">
-            </div>
-          </div>
-          <span class="w-100 d-none" id="idPasswordRegistroErrorMsg">
-            <ul class="password-requirements p-0">
-              <li class="d-flex align-items-center">
-                <span class="marker" id="pswc1"></span>
-                <p class="mb-0">Debe contener entre 8 y 16 caracteres</p></li>
-              <li class="d-flex align-items-center">
-                <span class="marker" id="pswc2"></span>
-                <p>Al menos una letra mayuscula</p></li>
-              <li class="d-flex align-items-center">
-                <span class="marker" id="pswc3"></span>
-                <p>Al menos una letra minuscula</p></li>
-              <li class="d-flex align-items-center">
-                <span class="marker" id="pswc4"></span>
-                <p>Al menos un caracter especial</p></li>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbar-links"
+            aria-controls="navbar-links"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbar-links">
+            <ul
+              class="navbar-nav ms-auto mb-2 mb-lg-0 gap-5 align-items-center"
+            >
+              <li class="nav-item">
+                <a class="nav-link" href="../index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../pages/productos.html">Productos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../pages/sobreNosotros.html">Nosotros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contactanos</a>
+              </li>
+              <li>
+                <div class="d-flex gap-4 me-3" id="userOptions"></div>
+              </li>
             </ul>
-          </span>
-          <button type="submit" class="btn disabled" id="idBtnRegistro">Registrarse</button>
-        </form>
-      </div>
-      <div class="form-container iniciar-sesion">
-        <form id="formularioIniciarSesion">
-          <legend>Iniciar Sesión</legend>
-          <div class="mb-3 w-75">
-            <label for="idEmailInicioSesion" class="form-label">Correo Electrónico</label>
-            <input type="email" class="form-control" id="idEmailInicioSesion" aria-describedby="emailHelp" placeholder="Ingresa tu email">
-          </div>
-          <div class="mb-3 w-75">
-            <label for="idPasswordInicioSesion" class="form-label">Contraseña</label>
-            <input type="password" class="form-control" id="idPasswordInicioSesion" placeholder="********">
-          </div>
-          <span class="my-2 d-none fs-4" id="errorMsgInicioSesión"></span>
-          <button type="submit" class="btn mt-2" id="idBtnIniciarSesion">Iniciar Sesión</button>
-          <a href="" class="mt-5">¿Olvidaste tu contraseña?</a>
-        </form>
-      </div>
 
-      <div class="toggle-container">
-        <div class="toggle">
-          <div class="toggle-panel toggle-left">
-            <h2> Bienvenido de nuevo</h2>
-            <p>Inicia sesión para continuar con tus compras favoritas de zapatillas.</p>
-            <button type="button" class="btn" id="idgotoInicioSesionBtn">Ingresar</button>
           </div>
-          <div class="toggle-panel toggle-right">
-            <h2>¿Aún no eres miembro?</h2>
-            <p>Regístrate y descubre las últimas tendencias y ofertas exclusivas.</p>
-            <button type="button" class="btn" id="idgotoRegistroBtn">Registrarse</button>
+        </div>
+      </nav>
+    </header>
+
+    <main
+      class="d-flex flex-column justify-content-center align-items-center h-100"
+    >
+      <div class="container main-wrapper" id="mainWrapper">
+        <div class="form-container registro px-2">
+          <form id="formularioRegistro">
+            <legend>Registro</legend>
+            <div class="mb-3 w-100">
+              <label for="idNombreRegistro" class="form-label">Nombre</label>
+              <input
+                type="text"
+                class="form-control"
+                id="idNombreRegistro"
+                placeholder="Ingresa tu nombre"
+              />
+              <span class="d-none" id="idNombreRegistroErrorMsg"></span>
+            </div>
+            <div class="mb-3 w-100">
+              <label for="idEmailRegistro" class="form-label"
+                >Correo Electrónico</label
+              >
+              <input
+                type="email"
+                class="form-control"
+                id="idEmailRegistro"
+                aria-describedby="emailHelp"
+                placeholder="Ingresa tu email"
+              />
+              <span class="d-none" id="idEmailRegistroErrorMsg"></span>
+            </div>
+            <div class="password-container d-flex gap-3">
+              <div class="mb-3">
+                <label for="idPasswordRegistro" class="form-label"
+                  >Contraseña</label
+                >
+                <input
+                  type="password"
+                  class="form-control"
+                  id="idPasswordRegistro"
+                  placeholder="********"
+                />
+              </div>
+              <div class="mb-1">
+                <label for="idRepetirPasswordRegistro" class="form-label"
+                  >Repetir contraseña</label
+                >
+                <input
+                  type="password"
+                  class="form-control"
+                  id="idRepetirPasswordRegistro"
+                  placeholder="********"
+                />
+              </div>
+            </div>
+            <span class="w-100 d-none" id="idPasswordRegistroErrorMsg">
+              <ul class="password-requirements p-0">
+                <li class="d-flex align-items-center">
+                  <span class="marker" id="pswc1"></span>
+                  <p class="mb-0">Debe contener entre 8 y 16 caracteres</p>
+                </li>
+                <li class="d-flex align-items-center">
+                  <span class="marker" id="pswc2"></span>
+                  <p>Al menos una letra mayuscula</p>
+                </li>
+                <li class="d-flex align-items-center">
+                  <span class="marker" id="pswc3"></span>
+                  <p>Al menos una letra minuscula</p>
+                </li>
+                <li class="d-flex align-items-center">
+                  <span class="marker" id="pswc4"></span>
+                  <p>Al menos un caracter especial</p>
+                </li>
+              </ul>
+            </span>
+            <button type="submit" class="btn disabled" id="idBtnRegistro">
+              Registrarse
+            </button>
+          </form>
+        </div>
+        <div class="form-container iniciar-sesion">
+          <form id="formularioIniciarSesion">
+            <legend>Iniciar Sesión</legend>
+            <div class="mb-3 w-75">
+              <label for="idEmailInicioSesion" class="form-label"
+                >Correo Electrónico</label
+              >
+              <input
+                type="email"
+                class="form-control"
+                id="idEmailInicioSesion"
+                aria-describedby="emailHelp"
+                placeholder="Ingresa tu email"
+              />
+            </div>
+            <div class="mb-3 w-75">
+              <label for="idPasswordInicioSesion" class="form-label"
+                >Contraseña</label
+              >
+              <input
+                type="password"
+                class="form-control"
+                id="idPasswordInicioSesion"
+                placeholder="********"
+              />
+            </div>
+            <span class="my-2 d-none fs-4" id="errorMsgInicioSesión"></span>
+            <button type="submit" class="btn mt-2" id="idBtnIniciarSesion">
+              Iniciar Sesión
+            </button>
+            <a href="" class="mt-5">¿Olvidaste tu contraseña?</a>
+          </form>
+        </div>
+
+        <div class="toggle-container">
+          <div class="toggle">
+            <div class="toggle-panel toggle-left">
+              <h2>Bienvenido de nuevo</h2>
+              <p>
+                Inicia sesión para continuar con tus compras favoritas de
+                zapatillas.
+              </p>
+              <button type="button" class="btn" id="idgotoInicioSesionBtn">
+                Ingresar
+              </button>
+            </div>
+            <div class="toggle-panel toggle-right">
+              <h2>¿Aún no eres miembro?</h2>
+              <p>
+                Regístrate y descubre las últimas tendencias y ofertas
+                exclusivas.
+              </p>
+              <button type="button" class="btn" id="idgotoRegistroBtn">
+                Registrarse
+              </button>
+            </div>
           </div>
+        </div>
+        <div class="successful-login-spiner d-none" id="successfulLogin"></div>
+      </div>
+    </main>
+      <footer>
+      <section class="container">
+        <article class="row">
+          <div class="col-sm-12 col-md-4 text-center py-5">
+            <h6 class="mb-3 fs-3">Nuestras Redes Sociales</h6>
+            <a href="https://es-la.facebook.com/" target="_blank" class="me-2 fs-4"
+              ><i class="fa-brands fa-square-facebook fa-2x text-light"></i
+            ></a>
+            <a href="https://www.instagram.com/" target="_blank" class="me-2 fs-4"
+              ><i class="fa-brands fa-square-instagram fa-2x text-light"></i
+            ></a>
+            <a href="https://x.com/Inicio/" target="_blank" class="me-2 fs-4"
+              ><i class="fa-brands fa-x-twitter fa-2x text-light"></i
+            ></a>
+             <a href="https://ar.linkedin.com/" target="_blank" class="me-2 fs-4"
+              ><i class="fa-brands fa-linkedin fa-2x text-light"></i
+            ></a>
+          </div>
+          <div class="col-sm-12 col-md-4 text-center py-2">
+            <img class="w-50" src="../img/logo.png" alt="imglogo" />
+          </div>
+          <div class="col-sm-12 col-md-4 text-center py-5">
+            
+            <h6 class="pb-5 fs-4">
+              Horarios de Atencion:
+
+              <li>Lunes a viernes de 8:00 a 18:00</li>
+              <li>Sabados de 9:00 a 13:00</li>
+              <li><i class="fa-solid fa-headset fa-fw text-light"></i>(012)3456789</li>
+              
+            </h6>
+          </div>
+
         </div>
       </div>
       <div class="successful-login-spiner d-none" id="successfulLogin"></div>
@@ -169,10 +294,12 @@
               
             </h6>
           </div>
+
           <div>
          
         </article>
       </section>
+
     </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   <script src="../js/app.js"></script>
@@ -180,3 +307,4 @@
   <script src="../js/login-registro.js"></script>
 </body>
 </html>
+
