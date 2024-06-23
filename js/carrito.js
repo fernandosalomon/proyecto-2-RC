@@ -22,14 +22,72 @@ tbodyProductosCarrito.innerHTML = usuario.carrito.map(
       </div>
     </td>
     <td>
-      <div class="input-group mt-auto">
-        <span class="input-group-text">-</span>
-        <input type="number" class="form-control">
-        <span class="input-group-text">+</span>
+      <div class="input-group mt-auto ">
+        <span class="input-group-text fs-3 input-number-control prevent-select" id="idMinusBtnCantidadProductos">-</span>
+        <input type="number" class="form-control fs-4 text-center" id="idInputCantidadProductos" value=1>
+        <span class="input-group-text fs-3 input-number-control prevent-select" id="idPlusBtnCantidadProductos">+</span>
       </div>
     </td>
-    <td><p class="producto-precio m-0 fs-3 mx-3">$${producto.price}</p></td>
-    <th scope="row"><i class="bi bi-x-lg"></i></th>
+    <td><p class="producto-precio m-0 fs-3 mx-3 fw-bold">$${producto.price}</p></td>
+    <th scope="row" class="ms-3"><button class="bg-transparent border-0" onclick=eliminarProductoCarrito(${producto.id})><i class="bi bi-x-lg"></i></button></th>
   </tr>
   `
 );
+
+const minusBtnCantidadProductos =
+  document.getElementById("idMinusBtnCantidadProductos") || null;
+const plusBtnCantidadProductos =
+  document.getElementById("idPlusBtnCantidadProductos") || null;
+const inputCantidadProductos =
+  document.getElementById("idInputCantidadProductos") || null;
+
+minusBtnCantidadProductos !== null &&
+  minusBtnCantidadProductos.addEventListener("click", () => {
+    inputCantidadProductos.value > 1 &&
+      (inputCantidadProductos.value = Number(inputCantidadProductos.value) - 1);
+  });
+plusBtnCantidadProductos !== null &&
+  plusBtnCantidadProductos.addEventListener("click", () => {
+    inputCantidadProductos.value = Number(inputCantidadProductos.value) + 1;
+  });
+
+const eliminarProductoCarrito = (idProducto) => {
+  const nuevoCarritoUsuario = usuario.carrito.filter(
+    (producto) => producto.id !== idProducto
+  );
+  usuario.carrito = nuevoCarritoUsuario;
+  sessionStorage("usuario", JSON.stringify(usuario));
+};
+
+const subtotalCarrito = document.getElementById("idSubtotalProductosCarrito");
+const totalCarrito = document.getElementById("idTotalProductosCarrito");
+const ivaSubtotalCarrito = document.getElementById("idIVAProductosCarrito");
+
+const calcularSubtotalCarrito = () => {
+  return usuario.carrito.map((producto) => {
+    let total = 0;
+    total = total + Number(producto.price);
+    return total.toFixed(2);
+  });
+};
+
+const calcularIVACarrito = () => {
+  return usuario.carrito.map((producto) => {
+    let total = 0;
+    total = total + Number(producto.price);
+    return (total * 0.21).toFixed(2);
+  });
+};
+
+const calcularTotalCarrito = () => {
+  return usuario.carrito.map((producto) => {
+    let total = 0;
+    total = total + Number(producto.price);
+    total = total * 1.21;
+    return total.toFixed(2);
+  });
+};
+
+subtotalCarrito.innerHTML = `$${calcularSubtotalCarrito()}`;
+ivaSubtotalCarrito.innerHTML = `$${calcularIVACarrito()}`;
+totalCarrito.innerHTML = `$${calcularTotalCarrito()}`;
