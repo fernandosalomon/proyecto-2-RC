@@ -1,0 +1,150 @@
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eee;
+  min-height: 250px;
+}
+
+.card-img-top {
+  padding: 0 2rem;
+}
+
+.card-title {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.card-category {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  color: #929292;
+  margin-bottom: 1.2rem;
+}
+
+.card-price {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+}
+
+.card-producto:hover {
+  border: 1px solid black !important;
+  padding: 0.2rem !important;
+  cursor: pointer;
+}
+
+.offcanvas {
+  z-index: 5002;
+}
+
+.slider-container {
+  width: 100%;
+}
+.range-slider {
+  width: 100%;
+  pointer-events: none;
+  position: relative;
+  min-height: 40px;
+  margin: 0 1.5rem;
+}
+.range-slider input {
+  pointer-events: all;
+  position: absolute;
+  top: 10px;
+  right: 0;
+  z-index: 1;
+}
+
+.range-slider input::-webkit-slider-runnable-track {
+  height: 0;
+}
+
+.range-slider input[type="range"] {
+  width: 100%;
+}
+.range-slider .range-track {
+  height: 5px;
+  background: #512da8;
+  position: absolute;
+  top: 15px;
+  right: 0;
+  z-index: 0;
+}
+
+.slider-min-price {
+  min-width: 30px;
+  text-align: start;
+}
+
+.full-range-track {
+  height: 5px;
+  background: #bfafe4;
+  position: absolute;
+  top: 15px;
+  right: 0;
+  z-index: -1;
+  width: 100%;
+  border-radius: 8px;
+}
+
+.barra-buscar-productos:focus,
+.barra-buscar-productos:active {
+  box-shadow: none !important;
+  border-color: transparent !important;
+  outline: none !important;
+}
+
+.btn-aplicar-filtros,
+.btn-restablecer-filtros {
+  padding: 1rem 0.5rem !important;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-aplicar-filtros {
+  background-color: #512da8;
+  color: #fff;
+  font-weight: 400;
+}
+
+.btn-restablecer-filtros {
+  background-color: #252525;
+  color: #fff;
+  font-weight: 400;
+}
+
+.btn-aplicar-filtros:hover {
+  background-color: #4115a8;
+  font-weight: 600;
+}
+
+.btn-restablecer-filtros:hover {
+  background-color: #1a1a1a;
+  font-weight: 600;
+}
+
+input[type="checkbox"] {
+  margin-right: 1rem;
+  border: 0.5px solid #512da8;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #512da8 !important;
+  outline: thick solid rgba(81, 45, 168, 0.3) !important;
+  border: none !important;
+  box-shadow: none;
+}
+
+input[type="checkbox"]:not(:checked) {
+  outline: none !important;
+  border: 0.5px solid #512da8;
+  box-shadow: none;
+}

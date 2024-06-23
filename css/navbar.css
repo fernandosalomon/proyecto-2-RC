@@ -1,8 +1,9 @@
 .navbar {
-  position: fixed;
   width: 100%;
   margin-bottom: 0.5rem;
   min-height: 75px;
+  z-index: 5000;
+  background-color: #fff;
 }
 
 .logo-container {
