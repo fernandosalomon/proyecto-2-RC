@@ -1,3 +1,21 @@
+main {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  margin-bottom: 2rem;
+}
+
+main::-webkit-scrollbar {
+  display: none;
+}
+
+.main-header {
+  margin: 2rem 0 !important;
+}
+
+.main-title {
+  font-size: 3rem !important;
+}
+
 .img-container {
   display: flex;
   justify-content: center;
