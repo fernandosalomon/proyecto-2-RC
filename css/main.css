@@ -23,8 +23,6 @@ body {
 
 header {
   width: 100%;
-  z-index: -1 !important;
-  background-color: transparent !important;
 }
 
 main {
