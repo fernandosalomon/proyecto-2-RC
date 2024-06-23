@@ -31,11 +31,7 @@ if (usuario !== "") {
   btnCerrarSesion.addEventListener("click", () => {
     sessionStorage.removeItem("usuario");
     setTimeout(() => {
-      if (location.pathname.search("pages") === -1) {
-        location.href = "./index.html";
-      } else {
-        location.href = "../index.html";
-      }
+      location.href = "../index.html";
     }, 1000);
   });
 }
