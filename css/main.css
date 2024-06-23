@@ -18,17 +18,21 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  /* height: 100vh; */
+  height: 100vh;
 }
 
 header {
   width: 100%;
+  z-index: -1 !important;
+  background-color: transparent !important;
 }
 
 main {
-  margin-top: 2rem;
+  padding-top: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  overflow: hidden;
+  height: 100%;
 }
