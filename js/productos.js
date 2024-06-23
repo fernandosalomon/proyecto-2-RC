@@ -14,10 +14,9 @@ const rangeTrack = document.querySelector(".range-track");
 const btnRestablecerFiltros = document.getElementById(
   "idBtnRestablecerFiltros"
 );
-const absoluteMaxPrice = 500;
-const btnBuscarProducto = document.getElementById("idBtnBuscarProducto");
 const inputBuscarProducto = document.getElementById("idInputBuscarProducto");
 const barraBuscarProducto = document.getElementById("idBarraBuscarProducto");
+const absoluteMaxPrice = 500;
 
 mainBody.innerHTML = productos
   .map(
@@ -162,19 +161,16 @@ btnRestablecerFiltros.addEventListener("click", () => {
   closeModalFiltro.click();
 });
 
-btnBuscarProducto.addEventListener("click", () => {
-  inputBuscarProducto.focus();
-  inputBuscarProducto.addEventListener("input", (e) => {
-    nombreProductoBuscar = e.target.value.trim().toLowerCase();
-    mainBody.innerHTML = productos
-      .filter(
-        (producto) =>
-          producto.title.trim().toLowerCase().search(nombreProductoBuscar) !==
-          -1
-      )
-      .map(
-        (producto) =>
-          `
+inputBuscarProducto.addEventListener("input", (e) => {
+  nombreProductoBuscar = e.target.value.trim().toLowerCase();
+  mainBody.innerHTML = productos
+    .filter(
+      (producto) =>
+        producto.title.trim().toLowerCase().search(nombreProductoBuscar) !== -1
+    )
+    .map(
+      (producto) =>
+        `
           <div class="card col-12 col-md-6 col-lg-4 p-0 border-0 card-producto" style="width: 32rem;">
             <div class="img-container">
               <img src="${producto.image}" class="card-img-top" alt="${producto.title}">
@@ -186,7 +182,6 @@ btnBuscarProducto.addEventListener("click", () => {
             </div>
           </div>
           `
-      )
-      .join("");
-  });
+    )
+    .join("");
 });
