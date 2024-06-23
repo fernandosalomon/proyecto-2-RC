@@ -1,103 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="description" content="Bienvenido al sitio oficial de ZapasMania. Encontrá en esta tienda online las mejores zapatillas deportiva, creadas con tecnología y diseño.">
-  <meta name="keywords" content="sneakers, ecommerce, shoes, online store">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ZapasMania</title>
-  <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <link rel="stylesheet" href="../css/main.css">
-  <link rel="stylesheet" href="../css/navbar.css">
-  <link rel="stylesheet" href="../css/home-admin.css">
-</head>
-<body>
-  <header>
-    <nav class="navbar navbar-expand-lg">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="./home-admin.html">
-          <div class="logo-container">
-            <img src="../img/logo.svg" alt="ZapasMania Logo">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Bienvenido al sitio oficial de ZapasMania. Encontrá en esta tienda online las mejores zapatillas deportiva, creadas con tecnología y diseño."
+    />
+    <meta name="keywords" content="sneakers, ecommerce, shoes, online store" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZapasMania</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/navbar.css" />
+    <link rel="stylesheet" href="../css/home-admin.css" />
+    <link rel="stylesheet" href="../css/footer.css">
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="./home-admin.html">
+            <div class="logo-container">
+              <img src="../img/logo.svg" alt="ZapasMania Logo" />
+            </div>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbar-links"
+            aria-controls="navbar-links"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbar-links">
+            <ul
+              class="navbar-nav ms-auto mb-2 mb-lg-0 gap-5 align-items-center"
+            >
+              <li class="nav-item">
+                <a class="nav-link" href="./home-admin.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="navbarBtnProductos">Productos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="navbarBtnUsuarios">Usuarios</a>
+              </li>
+              <li>
+                <div class="d-flex gap-4 me-3" id="userOptions"></div>
+              </li>
+            </ul>
           </div>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-links" aria-controls="navbar-links" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbar-links">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-5 align-items-center">
-            <li class="nav-item">
-              <a class="nav-link" href="./home-admin.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" id="navbarBtnProductos">Productos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" id="navbarBtnUsuarios">Usuarios</a>
-            </li>
-            <li>
-              <div class="d-flex gap-4 me-3" id="userOptions"></div>
-            </li>            
-          </ul>
         </div>
-      </div>
-    </nav>
-  </header>
+      </nav>
+    </header>
 
-  <main class="d-flex flex-column justify-content-center align-items-center">
-    <div class="container-fluid main-wrapper">
-      <div class="row gap-2 panel-control">
-        <div class="sidebar col-12 col-lg-3 ms-lg-4">
-          <div class="list-group">
-            <button type="button" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center active" aria-current="true">
-              <span class="d-flex justify-content-between align-items-center gap-2">
-                <i class="bi bi-gear"></i>
-                <p class="fs-4 m-0">Panel de Control</p>
-              </span>
-            </button>
-            <button type="button" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" id="idSidepanelBtnUsuarios">
-              <span class="d-flex justify-content-between align-items-center gap-2"><i class="bi bi-person"></i><p class="fs-5 m-0">Usuarios</p></span>
-              <span class="badge text-bg-primary rounded-pill fs-5 p-2" id="sidepanelPillUsuarios"></span>
-            </button>
-            <button type="button" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" id="idSidepanelBtnProductos">
-              <span class="d-flex justify-content-between align-items-center gap-2"><i class="bi bi-bag"></i><p class="fs-5 m-0">Productos</p></span>
-              <span class="badge text-bg-primary rounded-pill fs-5 p-2" id="sidepanelPillProductos"></span>
-            </button>
-          </div>
-        </div>
-        <div class="main-panel col-12 col-lg-8 p-3">
-          <div class="my-auto" id="mainPanelWrapper">
-            <div class="d-flex justify-content-center justify-content-md-end me-3 d-none" id="idBtnCrearProductosWrapper">
-              <button type="button" class="btn" id="idBtnCrearProductos" data-bs-toggle="modal" data-bs-target="#idModalCrearProducto">
-                <i class="bi bi-plus-square"></i>
+    <main class="d-flex flex-column justify-content-center align-items-center">
+      <div class="container-fluid main-wrapper">
+        <div class="row gap-2 panel-control">
+          <div class="sidebar col-12 col-lg-3 ms-lg-4">
+            <div class="list-group">
+              <button
+                type="button"
+                class="list-group-item list-group-item-action d-flex justify-content-between align-items-center active"
+                aria-current="true"
+              >
+                <span
+                  class="d-flex justify-content-between align-items-center gap-2"
+                >
+                  <i class="bi bi-gear"></i>
+                  <p class="fs-4 m-0">Panel de Control</p>
+                </span>
+              </button>
+              <button
+                type="button"
+                class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+                id="idSidepanelBtnUsuarios"
+              >
+                <span
+                  class="d-flex justify-content-between align-items-center gap-2"
+                  ><i class="bi bi-person"></i>
+                  <p class="fs-5 m-0">Usuarios</p></span
+                >
+                <span
+                  class="badge text-bg-primary rounded-pill fs-5 p-2"
+                  id="sidepanelPillUsuarios"
+                ></span>
+              </button>
+              <button
+                type="button"
+                class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+                id="idSidepanelBtnProductos"
+              >
+                <span
+                  class="d-flex justify-content-between align-items-center gap-2"
+                  ><i class="bi bi-bag"></i>
+                  <p class="fs-5 m-0">Productos</p></span
+                >
+                <span
+                  class="badge text-bg-primary rounded-pill fs-5 p-2"
+                  id="sidepanelPillProductos"
+                ></span>
               </button>
             </div>
-            <table class="table">
-              <thead class="main-panel-thead" id="mainPanelThead"></thead>
-              <tbody class="main-panel-tbody" id="mainPanelTbody"></tbody>
-            </table>
+          </div>
+          <div class="main-panel col-12 col-lg-8 p-3">
+            <div class="my-auto" id="mainPanelWrapper">
+              <div
+                class="d-flex justify-content-center justify-content-md-end me-3 d-none"
+                id="idBtnCrearProductosWrapper"
+              >
+                <button
+                  type="button"
+                  class="btn"
+                  id="idBtnCrearProductos"
+                  data-bs-toggle="modal"
+                  data-bs-target="#idModalCrearProducto"
+                >
+                  <i class="bi bi-plus-square"></i>
+                </button>
+              </div>
+              <table class="table">
+                <thead class="main-panel-thead" id="mainPanelThead"></thead>
+                <tbody class="main-panel-tbody" id="mainPanelTbody"></tbody>
+              </table>
+            </div>
           </div>
         </div>
+        <!-- Modal Editar Usuario -->
+        <div
+          class="modal fade"
+          id="idModalEditarUsuario"
+          tabindex="-1"
+          aria-labelledby="idModalEditarUsuario"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog" id="idModalEditarUsuarioBody"></div>
+        </div>
+        <!-- Modal Editar Producto -->
+        <div
+          class="modal fade"
+          id="idModalEditarProducto"
+          tabindex="-1"
+          aria-labelledby="idModalEditarProducto"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog" id="idModalEditarProductoBody"></div>
+        </div>
+        <!-- Modal Crear Producto -->
+        <div
+          class="modal fade"
+          id="idModalCrearProducto"
+          tabindex="-1"
+          aria-labelledby="idModalCrearProducto"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog" id="idModalCrearProductoBody"></div>
+        </div>
       </div>
-      <!-- Modal Editar Usuario -->
-      <div class="modal fade" id="idModalEditarUsuario" tabindex="-1" aria-labelledby="idModalEditarUsuario" aria-hidden="true">
-        <div class="modal-dialog" id="idModalEditarUsuarioBody"></div>
-      </div>
-      <!-- Modal Editar Producto -->
-      <div class="modal fade" id="idModalEditarProducto" tabindex="-1" aria-labelledby="idModalEditarProducto" aria-hidden="true">
-        <div class="modal-dialog" id="idModalEditarProductoBody"></div>
-      </div>
-       <!-- Modal Crear Producto -->
-       <div class="modal fade" id="idModalCrearProducto" tabindex="-1" aria-labelledby="idModalCrearProducto" aria-hidden="true">
-        <div class="modal-dialog" id="idModalCrearProductoBody"></div>
-      </div>
-    </div>
-  </main>
+    </main>
+       <footer>
+      <section class="container">
+        <article class="row">
+          <div class="col-sm-12 col-md-4 text-center py-5">
+            <h6 class="mb-3 fs-3">Nuestras Redes Sociales</h6>
+            <a href="https://es-la.facebook.com/" target="_blank" class="me-2 fs-4"
+              ><i class="fa-brands fa-square-facebook fa-2x text-light"></i
+            ></a>
+            <a href="https://www.instagram.com/" target="_blank" class="me-2 fs-4"
+              ><i class="fa-brands fa-square-instagram fa-2x text-light"></i
+            ></a>
+            <a href="https://x.com/Inicio/" target="_blank" class="me-2 fs-4"
+              ><i class="fa-brands fa-x-twitter fa-2x text-light"></i
+            ></a>
+             <a href="https://ar.linkedin.com/" target="_blank" class="me-2 fs-4"
+              ><i class="fa-brands fa-linkedin fa-2x text-light"></i
+            ></a>
+          </div>
+          <div class="col-sm-12 col-md-4 text-center py-2">
+            <img class="w-50" src="../img/logo.png" alt="imglogo" />
+          </div>
+          <div class="col-sm-12 col-md-4 text-center py-5">
+            
+            <h6 class="pb-5 fs-4">
+              Horarios de Atencion:
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  <script src="../js/app.js"></script>
-  <script src="../js/navbar.js"></script>
-  <script src="../js/homeAdmin.js"></script>
-</body>
+              <li>Lunes a viernes de 8:00 a 18:00</li>
+              <li>Sabados de 9:00 a 13:00</li>
+              <li><i class="fa-solid fa-headset fa-fw text-light"></i>(012)3456789</li>
+              
+            </h6>
+          </div>
+          <div>
+         
+        </article>
+      </section>
+    </footer> 
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../js/app.js"></script>
+    <script src="../js/navbar.js"></script>
+    <script src="../js/homeAdmin.js"></script>
+  </body>
 </html>
