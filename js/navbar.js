@@ -21,6 +21,7 @@ if (usuario === "") {
     </li>
   </ul>  
   `;
+
 }
 
 if (usuario !== "") {
@@ -47,3 +48,4 @@ btnIngresar.addEventListener("click", () => {
     location.href = "./login-registro.html";
   }
 });
+
