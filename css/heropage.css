@@ -1,3 +1,7 @@
+body {
+  overflow: hidden;
+}
+
 main {
   padding: 1rem 3rem;
 }

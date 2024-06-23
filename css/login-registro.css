@@ -1,22 +1,21 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 
-body{
+body {
   height: 100vh;
 }
 
-.main-wrapper{ 
+.main-wrapper {
   background-color: #fff;
   border-radius: 3rem;
-  box-shadow: 0 5px 15px rgba(0,0,0,.35);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
   position: relative;
   overflow: hidden;
   width: 768px;
   max-width: 100%;
   min-height: 500px;
-  margin-top: 90px;
 }
 
-.main-wrapper form{
+.main-wrapper form {
   background-color: #fff;
   display: flex;
   align-items: center;
@@ -26,20 +25,20 @@ body{
   height: 100%;
 }
 
-form legend{
+form legend {
   text-align: center;
   font-size: 3.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
 }
 
-form label{
+form label {
   font-size: 1.3rem !important;
   line-height: 2rem;
   letter-spacing: 0.3px;
 }
 
-form input{
+form input {
   background-color: #eee !important;
   border: none;
   /* margin-bottom: 8px; */
@@ -50,47 +49,45 @@ form input{
   outline: none;
 }
 
-form button{
+form button {
   font-size: 1.7rem !important;
   background-color: #512da8 !important;
   color: #fff !important;
   padding: 1rem 4.5rem !important;
-
 }
 
-form a{
+form a {
   text-decoration: none;
   color: #000;
   cursor: pointer;
   font-size: 1.3rem;
-
 }
 
-.form-container{
+.form-container {
   position: absolute;
   top: 0;
   height: 100%;
   transition: all 0.6s ease-in-out;
 }
 
-.iniciar-sesion{
+.iniciar-sesion {
   left: 0;
   width: 50%;
   z-index: 2;
 }
 
-.main-wrapper.active .iniciar-sesion{
+.main-wrapper.active .iniciar-sesion {
   transform: translateX(100%);
 }
 
-.registro{
+.registro {
   left: 0;
   width: 50%;
   opacity: 0;
   z-index: 1;
 }
 
-.main-wrapper.active .registro{
+.main-wrapper.active .registro {
   transform: translateX(100%);
   opacity: 1;
   z-index: 5;
@@ -98,17 +95,19 @@ form a{
 }
 
 @keyframes move {
-  0%, 49.99%{
+  0%,
+  49.99% {
     opacity: 0;
     z-index: 1;
   }
-  50%, 100%{
+  50%,
+  100% {
     opacity: 1;
     z-index: 5;
   }
 }
 
-.toggle-container{
+.toggle-container {
   position: absolute;
   top: 0;
   left: 50%;
@@ -120,15 +119,15 @@ form a{
   border-radius: 150px 0 0 100px;
 }
 
-.main-wrapper.active .toggle-container{
+.main-wrapper.active .toggle-container {
   transform: translateX(-100%);
   border-radius: 0 150px 100px 0;
 }
 
-.toggle{
+.toggle {
   background-color: rgb(30, 86, 245);
   height: 100%;
-  background: linear-gradient(to right, #2A293E, #362A60);
+  background: linear-gradient(to right, #2a293e, #362a60);
   color: #fff;
   position: relative;
   left: -100%;
@@ -138,11 +137,11 @@ form a{
   transition: all 0.6s ease-in-out;
 }
 
-.main-wrapper.active .toggle{
+.main-wrapper.active .toggle {
   transform: translate(50%);
 }
 
-.toggle-panel{
+.toggle-panel {
   position: absolute;
   width: 50%;
   height: 100%;
@@ -157,63 +156,63 @@ form a{
   transition: all 0.6s ease-in-out;
 }
 
-.toggle-panel h2{
+.toggle-panel h2 {
   font-size: 4rem;
   margin-bottom: 2rem;
 }
 
-.toggle-panel p{
+.toggle-panel p {
   font-size: 1.4rem;
   margin-bottom: 2rem;
 }
 
-.toggle-panel button{
+.toggle-panel button {
   font-size: 1.7rem !important;
   background-color: #512da8 !important;
   color: #fff !important;
   padding: 1rem 4.5rem !important;
 }
 
-.toggle-left{
+.toggle-left {
   transform: translateX(-200%);
 }
 
-.main-wrapper.active .toggle-left{
+.main-wrapper.active .toggle-left {
   transform: translateX(0);
 }
 
-.toggle-right{
+.toggle-right {
   right: 0;
   transform: translateX(0);
 }
 
-.main-wrapper.active .toggle-right{
+.main-wrapper.active .toggle-right {
   transform: translateX(200%);
 }
 
-.password-requirements{
+.password-requirements {
   list-style: none;
   font-size: 1.2rem;
   margin-bottom: 1rem;
 }
 
-.password-requirements li{
+.password-requirements li {
   line-height: 0.5rem;
 }
 
-.marker{
+.marker {
   font-size: 1.5rem;
 }
 
-.marker-valid{
-  color: green; 
+.marker-valid {
+  color: green;
 }
 
-.marker-invalid{
+.marker-invalid {
   color: red;
 }
 
-.successful-login-spiner{
+.successful-login-spiner {
   min-width: 100%;
   min-height: 100%;
   display: flex;
@@ -223,10 +222,10 @@ form a{
   position: absolute;
   top: 0;
   left: 0;
-  background-color: rgba(255,255,255,0.4);
+  background-color: rgba(255, 255, 255, 0.4);
 }
 
-.spinner-border{
+.spinner-border {
   z-index: 1002;
   width: 60px;
   height: 60px;

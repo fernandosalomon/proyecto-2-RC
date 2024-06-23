@@ -1,14 +1,13 @@
-body {
-  display: flex;
-  flex-direction: column;
-}
-
 .img-container {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #eee;
   min-height: 250px;
+}
+
+a {
+  text-decoration: none;
 }
 
 .card-img-top {
@@ -149,6 +148,6 @@ input[type="checkbox"]:not(:checked) {
   box-shadow: none;
 }
 
-.textonone{
+.textonone {
   text-decoration: none !important;
 }
