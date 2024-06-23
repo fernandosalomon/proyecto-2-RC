@@ -1,0 +1,16 @@
+footer {
+  background-color: #512da8;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-family: "Poppins", sans-serif;
+  bottom: 0;
+  width: 100%;
+}
+.espacioLogo {
+  margin-top: 50px;
+}
+
+.botonError {
+  color: #512da8;
+}

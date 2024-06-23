@@ -13,14 +13,9 @@ html {
 
 body {
   font-family: "Poppins", sans-serif;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 
 main {
-  position: absolute;
   top: 90px;
   left: 0;
   width: 100%;
