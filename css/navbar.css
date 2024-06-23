@@ -71,8 +71,7 @@ i {
   outline: none;
 }
 
-.btn-1:hover,
-.btn-1:focus {
+.btn-1:hover {
   background-color: #44258b;
   transition: all 0.1s ease-in-out;
   font-weight: 500;

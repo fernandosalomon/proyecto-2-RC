@@ -1,5 +1,7 @@
 const userOptions = document.getElementById("userOptions");
 // const usuario = JSON.parse(sessionStorage.getItem("usuario")) || "";
+const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+const favorito = JSON.parse(localStorage.getItem("favorito")) || [];
 
 if (usuario === "") {
   userOptions.innerHTML = `
