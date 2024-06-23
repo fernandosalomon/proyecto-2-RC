@@ -5,9 +5,10 @@ const btnEmpezarAComprar = document.getElementById("idBtnEmpezarAComprar");
 const btnComprarProductoDestacado = document.getElementById(
   "idBtnComprarProductoDestacado"
 );
-// const productos = JSON.parse(localStorage.getItem("productos")) || [];
 
-const productoDestacado = productos.filter((producto) => producto.destacado);
+const productoDestacado = productos.filter(
+  (producto) => producto.destacado === true
+);
 
 const productoDestacadoImgURL =
   "./" + productoDestacado[0].image.split("/").splice(1).join("/");
@@ -18,6 +19,7 @@ titleProductoDestacado.innerText = productoDestacado[0].title;
 priceProductoDestacado.innerHTML = `$${productoDestacado[0].price}`;
 
 btnEmpezarAComprar.addEventListener("click", () => {
+  console.log("HOLA");
   if (usuario) {
     location.href = "./pages/productos.html";
   } else {

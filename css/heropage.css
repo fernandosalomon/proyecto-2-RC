@@ -1,17 +1,20 @@
 body {
   overflow: hidden;
+  justify-content: stretch;
 }
 
 main {
   padding: 1rem 3rem;
+  flex: 1;
+  height: 100%;
 }
 
 .main-wrapper {
-  height: 100%;
   margin-top: 4rem;
   display: flex;
   flex-direction: row;
   align-items: center;
+  flex: 1;
 }
 
 .hero-text__container {

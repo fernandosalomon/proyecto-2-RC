@@ -211,6 +211,8 @@ const productosDB = ListaProductos.map((producto) => {
   };
 });
 
+productosDB[0].destacado = true;
+
 if (JSON.parse(localStorage.getItem("productos")) === null) {
   localStorage.setItem("productos", JSON.stringify(productosDB));
 }
