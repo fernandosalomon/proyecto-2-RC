@@ -1,0 +1,16 @@
+.pago-productos {
+  min-width: 300px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.img-producto__carrito {
+  object-fit: cover;
+  background-color: #eee;
+  min-height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0.8rem;
+}
