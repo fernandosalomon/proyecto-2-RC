@@ -84,6 +84,7 @@ const agregarProductoCarrito = (idProducto) => {
       usuario.carrito.push({
         ...productosSeleccionado,
         talle: talleSeleccionado,
+        cantidad: 1,
       });
       sessionStorage.setItem("usuario", JSON.stringify(usuario));
       customAlertCaller(

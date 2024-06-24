@@ -13,6 +13,37 @@ const eliminarProductoCarrito = (idProducto) => {
   location.reload();
 };
 
+const quitarUnElemento = (idProducto) => {
+  const productoSeleccionado = usuario.carrito.filter(
+    (producto) => producto.id === idProducto
+  );
+  const posicionProductoSeleccionado = usuario.carrito.findIndex(
+    (producto) => producto.id === idProducto
+  );
+
+  if (usuario.carrito[posicionProductoSeleccionado].cantidad > 1) {
+    usuario.carrito[posicionProductoSeleccionado].cantidad =
+      usuario.carrito[posicionProductoSeleccionado].cantidad - 1;
+    sessionStorage.setItem("usuario", JSON.stringify(usuario));
+    location.reload();
+  }
+};
+
+const agregarUnElemento = (idProducto) => {
+  const productoSeleccionado = usuario.carrito.filter(
+    (producto) => producto.id === idProducto
+  );
+  const posicionProductoSeleccionado = usuario.carrito.findIndex(
+    (producto) => producto.id === idProducto
+  );
+
+  usuario.carrito[posicionProductoSeleccionado].cantidad =
+    usuario.carrito[posicionProductoSeleccionado].cantidad + 1;
+
+  sessionStorage.setItem("usuario", JSON.stringify(usuario));
+  location.reload();
+};
+
 if (usuario.carrito.length) {
   tbodyProductosCarrito.innerHTML = usuario.carrito.map(
     (producto) =>
@@ -20,7 +51,7 @@ if (usuario.carrito.length) {
     <tr class="py-3">
       <td>
         <div class="card d-flex flex-row justify-content-center align-items-center gap-2 px-3 border-0">
-          <div class="d-flex flex-column align-items-center gap-3 d-md-inline">
+          <div class="d-flex flex-column align-items-center gap-3 d-md-inline card-img-container">
             <div class="w-25 img-producto__carrito">
               <img src="${producto.image}" class="card-img-top w-100" alt="${producto.title}">
             </div>
@@ -31,9 +62,9 @@ if (usuario.carrito.length) {
             <p class="producto-categoria fs-4 fw-bold text-secondary">${producto.category}</p>
             <p class="producto-talle fs-3">Talle: <span class="producto-talle fs-3 fw-bold"> ${producto.talle} </span></p>
               <div class="input-group mt-auto d-md-none d-flex">
-                <span class="input-group-text fs-3 input-number-control prevent-select" id="idMinusBtnCantidadProductos">-</span>
-                <input type="number" class="form-control fs-4 text-center" id="idInputCantidadProductos" value=1>
-                <span class="input-group-text fs-3 input-number-control prevent-select" id="idPlusBtnCantidadProductos">+</span>
+                <button class="input-group-text fs-3 input-number-control prevent-select" onclick=quitarUnElemento(${producto.id})>-</button>
+                <input type="number" class="form-control fs-4 text-center" id="idInputCantidadProductos-sm" value=${producto.cantidad}>
+                <button class="input-group-text fs-3 input-number-control prevent-select" onclick=agregarUnElemento(${producto.id})>+</button>
               </div>
             <p class="producto-precio m-0 fs-3 mx-3 my-3 fw-bold d-md-none d-flex">$${producto.price}</p>
           </div>
@@ -41,9 +72,9 @@ if (usuario.carrito.length) {
       </td>
       <td>
         <div class="input-group mt-auto d-none d-md-flex">
-          <span class="input-group-text fs-3 input-number-control prevent-select" id="idMinusBtnCantidadProductos">-</span>
-          <input type="number" class="form-control fs-4 text-center" id="idInputCantidadProductos" value=1>
-          <span class="input-group-text fs-3 input-number-control prevent-select" id="idPlusBtnCantidadProductos">+</span>
+          <span class="input-group-text fs-3 input-number-control prevent-select" onclick=quitarUnElemento(${producto.id})>-</span>
+          <input type="number" class="form-control fs-4 text-center" id="idInputCantidadProductos" value=${producto.cantidad}>
+          <span class="input-group-text fs-3 input-number-control prevent-select" onclick=agregarUnElemento(${producto.id})>+</span>
         </div>
       </td>
       <td class="d-flex flex-column align-items-center justify-content-between d-md-table-cell">
@@ -54,24 +85,6 @@ if (usuario.carrito.length) {
     `
   );
 
-  const minusBtnCantidadProductos =
-    document.getElementById("idMinusBtnCantidadProductos") || null;
-  const plusBtnCantidadProductos =
-    document.getElementById("idPlusBtnCantidadProductos") || null;
-  const inputCantidadProductos =
-    document.getElementById("idInputCantidadProductos") || null;
-
-  minusBtnCantidadProductos !== null &&
-    minusBtnCantidadProductos.addEventListener("click", () => {
-      inputCantidadProductos.value > 1 &&
-        (inputCantidadProductos.value =
-          Number(inputCantidadProductos.value) - 1);
-    });
-  plusBtnCantidadProductos !== null &&
-    plusBtnCantidadProductos.addEventListener("click", () => {
-      inputCantidadProductos.value = Number(inputCantidadProductos.value) + 1;
-    });
-
   const subtotalCarrito = document.getElementById("idSubtotalProductosCarrito");
   const totalCarrito = document.getElementById("idTotalProductosCarrito");
   const ivaSubtotalCarrito = document.getElementById("idIVAProductosCarrito");
@@ -79,7 +92,8 @@ if (usuario.carrito.length) {
   const calcularSubtotalCarrito = () => {
     let total = 0;
     usuario.carrito.map((producto) => {
-      total = Number(total) + Number(producto.price);
+      total =
+        Number(total) + Number(producto.price) * Number(producto.cantidad);
     });
     return total.toFixed(2);
   };
@@ -87,7 +101,7 @@ if (usuario.carrito.length) {
   const calcularIVACarrito = () => {
     let total = 0;
     usuario.carrito.map((producto) => {
-      total = total + Number(producto.price);
+      total = total + Number(producto.price) * Number(producto.cantidad);
     });
     return (total * 0.21).toFixed(2);
   };
@@ -95,7 +109,7 @@ if (usuario.carrito.length) {
   const calcularTotalCarrito = () => {
     let total = 0;
     usuario.carrito.map((producto) => {
-      total = total + Number(producto.price);
+      total = total + Number(producto.price) * Number(producto.cantidad);
       total = total * 1.21;
     });
     return total.toFixed(2);
