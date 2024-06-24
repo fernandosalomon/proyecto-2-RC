@@ -276,5 +276,4 @@ const customAlertCaller = (title, msg, type = "notification") => {
       customAlertInstance.hide();
     }, 3000);
   }
-  console.log(confirmationModal);
 };

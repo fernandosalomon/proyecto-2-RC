@@ -251,9 +251,7 @@ btnRegistro.addEventListener("click", (e) => {
     const usuarioExiste = usuarios.filter(
       (usuario) => usuario.email === e.target.value
     ).length;
-    console.log(usuarioExiste);
     if (!usuarioExiste) {
-      console.log("Hola");
       if (usuarios.length) {
         const nuevoUsuario = {
           id: usuarios[usuarios.length - 1].id + 1,
@@ -326,7 +324,6 @@ btnIniciarSesion.addEventListener("click", (e) => {
       usuario.email === inputEmailIniciarSesion.value &&
       usuario.password === inputPasswordIniciarSesion.value
   );
-  console.log(usuarioExiste);
   if (usuarioExiste.length) {
     sessionStorage.setItem("usuario", JSON.stringify(usuarioExiste[0])) || "";
     spinnerSuccessfulLogin.innerHTML = `

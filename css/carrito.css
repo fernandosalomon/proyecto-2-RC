@@ -19,15 +19,12 @@ main {
   padding: 0 0.8rem;
 }
 
-/*To remove the control buttons to the input*/
-
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-/* Firefox */
 input[type="number"] {
   appearance: textfield;
   -moz-appearance: textfield;
@@ -43,9 +40,9 @@ input[type="number"]:focus {
 }
 
 .prevent-select {
-  -webkit-user-select: none; /* Safari */
-  -ms-user-select: none; /* IE 10 and IE 11 */
-  user-select: none; /* Standard syntax */
+  -webkit-user-select: none; 
+  -ms-user-select: none; 
+  user-select: none; 
 }
 
 .btn-redirigir-carrito {

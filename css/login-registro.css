@@ -38,7 +38,6 @@ form label {
 form input {
   background-color: #eee !important;
   border: none;
-  /* margin-bottom: 8px; */
   padding: 1rem 1.5rem !important;
   font-size: 1.3rem !important;
   border-radius: 16px !important;
@@ -145,7 +144,6 @@ form a {
   form input {
     background-color: #eee !important;
     border: none;
-    /* margin-bottom: 8px; */
     padding: 1rem 1.5rem !important;
     font-size: 1.3rem !important;
     border-radius: 16px !important;

@@ -125,7 +125,6 @@ const agregarProductoFavoritos = (idProducto) => {
     usuario.favoritos = usuario.favoritos.filter(
       (producto) => producto.id !== idProducto
     );
-    console.log(usuario);
     sessionStorage.setItem("usuario", JSON.stringify(usuario));
     location.reload();
   }

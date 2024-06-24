@@ -19,7 +19,6 @@ titleProductoDestacado.innerText = productoDestacado[0].title;
 priceProductoDestacado.innerHTML = `$${productoDestacado[0].price}`;
 
 btnEmpezarAComprar.addEventListener("click", () => {
-  console.log("HOLA");
   if (usuario) {
     location.href = "./pages/productos.html";
   } else {

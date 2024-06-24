@@ -273,8 +273,6 @@ btnBarraLateralPerfil.addEventListener("click", () => {
       usuarioSeleccionado[0].provincia = inputProvinciaUsuario.value;
       usuarioSeleccionado[0].cp = inputCPUsuario.value;
 
-      console.log(usuarioSeleccionado);
-
       posicionUsuarioSeleccionado = usuarios.findIndex(
         (usuario) => usuario.id === usuarioSeleccionado.id
       );
@@ -291,7 +289,6 @@ btnBarraLateralPerfil.addEventListener("click", () => {
     } else {
       alert("La contraseña no es correcta.");
     }
-    console.log(usuario);
   };
 
   const btnModificarDatosUsuario = document.getElementById(

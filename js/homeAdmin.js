@@ -426,7 +426,6 @@ const editarProducto = (idProducto) => {
       )
     ) {
       productos[posicionProductoSeleccionado] = productoSeleccionado;
-      console.log(productos);
       localStorage.setItem("productos", JSON.stringify(productos));
       location.reload();
     }
