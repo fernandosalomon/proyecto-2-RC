@@ -285,7 +285,11 @@ const destacarProducto = (idProducto) => {
         location.reload();
       }
     } else {
-      alert("Debe haber al menos un producto destacado");
+      customAlertCaller(
+        "Destaque un producto",
+        "Debe haber al menos un producto destacado",
+        "notification"
+      );
     }
   } else {
     if (

@@ -221,4 +221,60 @@ const productos = JSON.parse(localStorage.getItem("productos")) || [];
 const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 const usuario = JSON.parse(sessionStorage.getItem("usuario")) || "";
 
+const customAlert = document.createElement("div");
 
+customAlert.innerHTML = `
+<div class="modal" tabindex="-1" role="dialog" aria-labelledby="idCustomAlert" aria-hidden="true" id="idCustomAlert">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content p-3">
+      <div class="modal-header">
+        <h5 class="modal-title fs-2 fw-bold" id="idAlertTitle"></h5>
+        <button type="button" class="close border-0 bg-transparent ms-auto" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true"><i class="bi bi-x ms-4"></i></span>
+        </button>
+      </div>
+      <div class="modal-body fs-3 mt-4" id="idAlertBody"></div>
+      <div class="ms-auto mt-3" id="idAlertFooter"></div>
+    </div>
+  </div>
+</div>
+`;
+
+document.body.appendChild(customAlert);
+let confirmationModal = false;
+
+const customAlertCaller = (title, msg, type = "notification") => {
+  const customAlertContainer = document.getElementById("idCustomAlert");
+  const customAlertInstance = new bootstrap.Modal(customAlertContainer);
+  const alertTitle = document.getElementById("idAlertTitle");
+  const alertBody = document.getElementById("idAlertBody");
+  const alertFooter = document.getElementById("idAlertFooter");
+
+  alertTitle.innerHTML = `${title}`;
+  alertBody.innerHTML = `${msg}`;
+
+  if (type === "confirm") {
+    alertFooter.innerHTML = `
+    <button type="button" class="btn btn-success fs-3" id="idBtnConfirm">Confirmar</button>
+    <button type="button" class="btn btn-danger fs-3" id="idBtnClose" data-dismiss="modal">Volver atras</button> 
+    `;
+    const btnConfirm = document.getElementById("idBtnConfirm");
+    btnConfirm.addEventListener("click", () => {
+      confirmationModal = true;
+      customAlertInstance.hide();
+      
+    });
+
+    const btnClose = document.getElementById("idBtnClose");
+    btnClose.addEventListener("click", () => {
+      customAlertInstance.hide();
+    });
+    customAlertInstance.show();
+  } else {
+    customAlertInstance.show();
+    setTimeout(() => {
+      customAlertInstance.hide();
+    }, 3000);
+  }
+  console.log(confirmationModal);
+};

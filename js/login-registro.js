@@ -303,7 +303,11 @@ btnRegistro.addEventListener("click", (e) => {
       }
     }
   } else {
-    alert("Algo fue mal. Comunicate con el administrador");
+    customAlertCaller(
+      "Upps...",
+      "Algo fue mal. Comunicate con el administrador",
+      "notification"
+    );
   }
 });
 
