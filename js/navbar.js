@@ -17,8 +17,8 @@ if (usuario === "") {
   });
 } else {
   userOptions.innerHTML = `
-  <ul class="navbar-nav">
-    <li class="nav-item dropdown">
+  <ul class="navbar-nav d-flex flex-row gap-2 justify-content-center mt-4">
+    <li class="nav-item dropdown order-md-1 order-3">
       <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
         <i class="bi bi-person-circle"></i>
       </a>
@@ -28,13 +28,13 @@ if (usuario === "") {
         <li><a class="dropdown-item" id="idBtnCerrarSesion">Cerrar Sesión</a></li>
       </ul>
     </li>
-    <li class="nav-item">
+    <li class="nav-item order-md-2 order-1">
       <button class="nav-link" onclick="redirigirFavoritos()">
         <i class="bi bi-bag"></i>
         <span class="n-elementos-favoritos" id="idElementosFavoritos"><span>
       </button>
     </li>
-    <li class="nav-item">
+    <li class="nav-item order-md-3 order-2">
       <button class="nav-link" onclick="(() => {
         
           if (location.pathname.search('pages') === -1) {
