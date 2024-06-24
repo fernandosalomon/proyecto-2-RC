@@ -5,6 +5,12 @@ const productosSeleccionado = productosLocalStorage.find(
   (producto) => producto.id === Number(id)
 );
 let talleSeleccionado = "no especificado";
+const alertaProductoAgregadoCarrito = document.getElementById(
+  "idAlertaProductoAgregadoCarrito"
+);
+const toastProductoAgregadoCarrito = bootstrap.Toast.getOrCreateInstance(
+  alertaProductoAgregadoCarrito
+);
 
 detallesProducto.innerHTML = `  
 
@@ -86,7 +92,8 @@ const agregarProductoCarrito = (idProducto) => {
         talle: talleSeleccionado,
       });
       sessionStorage.setItem("usuario", JSON.stringify(usuario));
-      location.reload();
+      toastProductoAgregadoCarrito.show();
+      setTimeout(() => location.reload(), 2000);
     } else {
       alert("El producto ya se encuenctra en el carrito");
     }
