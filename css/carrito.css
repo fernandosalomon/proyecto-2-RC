@@ -12,6 +12,7 @@ main {
   object-fit: cover;
   background-color: #eee;
   min-height: 100px;
+  min-width: 100px;
   display: flex;
   justify-content: center;
   align-items: center;

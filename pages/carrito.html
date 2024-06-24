@@ -69,22 +69,22 @@
     </header>
 
     <main>
-      <div class="container row gap-5 w-100" id="idMainCarrito">
-        <div id="productosCarrito" class="border rounded p-3 col-8">
+      <div class="container row gap-5 w-100 flex-grow justify-content-center" id="idMainCarrito">
+        <div id="productosCarrito" class="border rounded p-3 col-12 col-lg-7">
           <h2>Productos</h2>
           <table class="table table-borderless fs-4 mt-5">
             <thead>
               <tr>
                 <th scope="col">Producto</th>
-                <th scope="col" class="text-center">Cantidad</th>
-                <th scope="col" class="text-center">Precio</th>
+                <th scope="col" class="text-center d-none d-md-table-cell">Cantidad</th>
+                <th scope="col" class="text-center d-none d-md-table-cell">Precio</th>
                 <th scope="col"></th>
               </tr>
             </thead>
             <tbody id="idTbodyProductosCarrito" class="align-middle"></tbody>
           </table>
         </div>
-        <div id="pagoProductosCarrito" class="pago-productos fs-4 col-3">
+        <div id="pagoProductosCarrito" class="pago-productos fs-4 col-2">
           <table class="table table-borderless">
             <tbody>
               <tr>

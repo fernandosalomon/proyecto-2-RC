@@ -27,8 +27,10 @@ btnEmpezarAComprar.addEventListener("click", () => {
   }
 });
 
-btnComprarProductoDestacado.addEventListener(
-  "click",
-  () =>
-    (location.href = `./pages/detalleProducto.html?id=${productoDestacado[0].id}`)
-);
+btnComprarProductoDestacado.addEventListener("click", () => {
+  if (usuario) {
+    location.href = `./pages/detalleProducto.html?id=${productoDestacado[0].id}`;
+  } else {
+    location.href = "./pages/login-registro.html";
+  }
+});

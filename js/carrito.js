@@ -17,30 +17,41 @@ if (usuario.carrito.length) {
   tbodyProductosCarrito.innerHTML = usuario.carrito.map(
     (producto) =>
       `
-  <tr class="py-3">
-    <td>
-      <div class="card d-flex flex-row justify-content-center align-items-center gap-2 px-3 border-0">
-        <div class="w-25 img-producto__carrito">
-          <img src="${producto.image}" class="card-img-top w-100" alt="${producto.title}">
+    <tr class="py-3">
+      <td>
+        <div class="card d-flex flex-row justify-content-center align-items-center gap-2 px-3 border-0">
+          <div class="d-flex flex-column align-items-center gap-3 d-md-inline">
+            <div class="w-25 img-producto__carrito">
+              <img src="${producto.image}" class="card-img-top w-100" alt="${producto.title}">
+            </div>
+            <button class="bg-transparent border-0 d-md-none d-flex" onclick=eliminarProductoCarrito(${producto.id})><i class="bi bi-x-lg"></i></button>
+          </div>
+          <div class="card-body">
+            <h5 class="producto-nombre fs-2 fw-bold">${producto.title}</h5>
+            <p class="producto-categoria fs-4 fw-bold text-secondary">${producto.category}</p>
+            <p class="producto-talle fs-3">Talle: <span class="producto-talle fs-3 fw-bold"> ${producto.talle} </span></p>
+              <div class="input-group mt-auto d-md-none d-flex">
+                <span class="input-group-text fs-3 input-number-control prevent-select" id="idMinusBtnCantidadProductos">-</span>
+                <input type="number" class="form-control fs-4 text-center" id="idInputCantidadProductos" value=1>
+                <span class="input-group-text fs-3 input-number-control prevent-select" id="idPlusBtnCantidadProductos">+</span>
+              </div>
+            <p class="producto-precio m-0 fs-3 mx-3 my-3 fw-bold d-md-none d-flex">$${producto.price}</p>
+          </div>
         </div>
-        <div class="card-body">
-          <h5 class="producto-nombre fs-2 fw-bold">${producto.title}</h5>
-          <p class="producto-categoria fs-4 fw-bold text-secondary">${producto.category}</p>
-          <p class="producto-talle fs-3">Talle: <span class="producto-talle fs-3 fw-bold"> ${producto.talle} </span></p>
+      </td>
+      <td>
+        <div class="input-group mt-auto d-none d-md-flex">
+          <span class="input-group-text fs-3 input-number-control prevent-select" id="idMinusBtnCantidadProductos">-</span>
+          <input type="number" class="form-control fs-4 text-center" id="idInputCantidadProductos" value=1>
+          <span class="input-group-text fs-3 input-number-control prevent-select" id="idPlusBtnCantidadProductos">+</span>
         </div>
-      </div>
-    </td>
-    <td>
-      <div class="input-group mt-auto ">
-        <span class="input-group-text fs-3 input-number-control prevent-select" id="idMinusBtnCantidadProductos">-</span>
-        <input type="number" class="form-control fs-4 text-center" id="idInputCantidadProductos" value=1>
-        <span class="input-group-text fs-3 input-number-control prevent-select" id="idPlusBtnCantidadProductos">+</span>
-      </div>
-    </td>
-    <td><p class="producto-precio m-0 fs-3 mx-3 fw-bold">$${producto.price}</p></td>
-    <th scope="row" class="ms-3"><button class="bg-transparent border-0" onclick=eliminarProductoCarrito(${producto.id})><i class="bi bi-x-lg"></i></button></th>
-  </tr>
-  `
+      </td>
+      <td class="d-flex flex-column align-items-center justify-content-between d-md-table-cell">
+        <p class="producto-precio m-0 fs-3 mx-3 fw-bold d-none d-md-flex">$${producto.price}</p>
+      </td>
+      <td class="ms-3 d-none d-md-table-cell"><button class="bg-transparent border-0" onclick=eliminarProductoCarrito(${producto.id})><i class="bi bi-x-lg"></i></button></td>
+    </tr>
+    `
   );
 
   const minusBtnCantidadProductos =
