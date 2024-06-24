@@ -14,7 +14,7 @@ const toastProductoAgregadoCarrito = bootstrap.Toast.getOrCreateInstance(
 
 detallesProducto.innerHTML = `  
 
-  <section class="container row d-flex mt-5 gap-lg-5">
+  <section class="container row d-flex mt-5">
         <article class="row col-sm-12 col-md-7 my-5">
           <div class="col-sm-12 col-md-8 text-center w-100 mb-5">
             <img class="w-75" src="${productosSeleccionado.image}" alt="${
@@ -26,7 +26,7 @@ detallesProducto.innerHTML = `
           }</p>
         </article>
           
-        <div class="col-sm-12 col-md-4 position-sticky">
+        <div class="col-sm-12 col-md-5 position-sticky ps-5">
           <aside>
           <h6 class="fw-semibold fs-2">Originals</h6>
           <h3 class="fw-bolder fs-1">${productosSeleccionado.title}</h3>
@@ -67,7 +67,7 @@ const btnGroupTalles = document.getElementById("idBtnGroupTalles") || null;
 btnGroupTalles.innerHTML = productosSeleccionado.tallesDisponibles
   .map((talle) => {
     return `
-  <button type="button" class="btn-talle border border-dark-subtle shadow-sm p-3 fs-3 rounded-pill col-12 col-md-6 col-lg-2 mx-3 g-3" onclick="seleccionarTalle(${talle})" id="idBtnTalle${talle}">${talle}</button>
+  <button type="button" class="btn-talle border border-dark-subtle shadow-sm p-3 fs-3 rounded-pill col-3 col-lg-2 mx-3 g-3" onclick="seleccionarTalle(${talle})" id="idBtnTalle${talle}">${talle}</button>
   `;
   })
   .join("");
