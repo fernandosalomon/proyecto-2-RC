@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Bienvenido al sitio oficial de ZapasMania. Encontrá en esta tienda online las mejores zapatillas deportiva, creadas con tecnología y diseño."
+    />
+    <meta name="keywords" content="sneakers, ecommerce, shoes, online store" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZapasMania</title>
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/navbar.css" />
+    <link rel="stylesheet" href="../css/cuenta-usuario.css" />
+    <link rel="stylesheet" href="../css/footer.css">
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="./productos.html">
+            <div class="logo-container">
+              <img src="../img/logo.svg" alt="ZapasMania Logo" />
+            </div>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbar-links"
+            aria-controls="navbar-links"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbar-links">
+            <ul
+              class="navbar-nav ms-4 me-auto mb-2 mb-lg-0 gap-5 align-items-center"
+            >
+              <li class="nav-item">
+                <a class="nav-link" href="./productos.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./productos.html">Productos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./sobre-nosotros.html">Nosotros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./contacto.html">Contactanos</a>
+              </li>
+            </ul>
+            <div class="d-flex gap-4 me-3" id="userOptions"></div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <aside class="w-25">
+        <div class="d-flex flex-column align-items-center gap-3 mb-5 w-50">
+          <svg class="h-100 w-auto" width="110" height="110" viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="110" height="110" fill="black" fill-opacity="0"></rect><rect width="110" height="110" fill="black" fill-opacity="0"></rect><path fill-rule="evenodd" clip-rule="evenodd" d="M55 110C85.3757 110 110 85.3757 110 55C110 24.6243 85.3757 0 55 0C24.6243 0 0 24.6243 0 55C0 85.3757 24.6243 110 55 110Z" fill="#D8D8D8"></path><mask id="mask0" maskUnits="userSpaceOnUse" x="0" y="0" width="110" height="110"><path fill-rule="evenodd" clip-rule="evenodd" d="M55 110C85.3757 110 110 85.3757 110 55C110 24.6243 85.3757 0 55 0C24.6243 0 0 24.6243 0 55C0 85.3757 24.6243 110 55 110Z" fill="white"></path></mask><g mask="url(#mask0)"><rect width="85.3731" height="96.8655" fill="black" fill-opacity="0" transform="translate(13.1367 21.3433)"></rect><path fill-rule="evenodd" clip-rule="evenodd" d="M66.4949 78.5818H45.1516C27.4705 78.5818 13.1367 93.0978 13.1367 111.004C13.1367 111.004 29.1442 118.209 55.8233 118.209C82.5024 118.209 98.5098 111.004 98.5098 111.004C98.5098 93.0978 84.1761 78.5818 66.4949 78.5818Z" fill="#979797"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M30.7969 46C30.7969 32.3824 42.0001 21.3433 55.82 21.3433C69.64 21.3433 80.8432 32.3824 80.8432 46C80.8432 59.6175 69.64 74.1791 55.82 74.1791C42.0001 74.1791 30.7969 59.6175 30.7969 46Z" fill="#979797"></path></g></svg>
+          <h2 class="fs-1" id="idNombreUsuarioCuentaUsuario">¡Hola!</h2>
+        </div>
+        <div class="menu">
+          <ul class="list-group">
+            <li class="list-group-item border-0 fs-2 mb-5 py-4 user-options"><button class="btn-barra-lateral" id="idBtnBarraLateralPerfil">Perfil</button></li>
+            <li class="list-group-item border-0 fs-2 mb-5 py-4 user-options"><button class="btn-barra-lateral" id="idBtnBarraLateralDirecciones">Direcciones</button></li>
+            <li class="list-group-item border-0 fs-2 mb-5 py-4 user-options"><button class="btn-barra-lateral" id="idBtnBarraLateralPedidos">Pedidos</button></li>
+            <li class="list-group-item border-0 fs-2 mb-5 py-4 user-options"><button class="btn-barra-lateral" id="idBtnBarraLateralFavoritos">Favoritos</button></li>
+            <li class="list-group-item border-0 fs-2 mb-5 py-4 user-options"><button class="btn-barra-lateral" id="idBtnBarraLateralSalir">Salir</button></li>
+          </ul>
+        </div>
+      </aside>
+      <section class="cuenta-usuario-ventana-lateral" id="idVentanaLateralCU">
+        <form class="row g-3 w-75">
+          <div class="col-12">
+            <label for="inputNombreUsuario" class="form-label fs-3">Nombre</label>
+            <input type="text" class="form-control fs-3" id="inputNombreUsuario">
+          </div>
+          <div class="col-md-6">
+            <label for="inputEmailUsuario" class="form-label fs-3">Email</label>
+            <input type="email" class="form-control fs-3" id="inputEmailUsuario">
+          </div>
+          <div class="col-md-6">
+            <label for="inputPasswordUsuario" class="form-label fs-3">Contraseña</label>
+            <input type="password" class="form-control fs-3" id="inputPasswordUsuario">
+          </div>
+          <div class="col-12">
+            <label for="inputDireccionUsuario" class="form-label fs-3">Dirección</label>
+            <input type="text" class="form-control fs-3" id="inputDireccionUsuario" placeholder="1234 Main St">
+          </div>
+          <div class="col-md-6">
+            <label for="inputCiudadUsuario" class="form-label fs-3">Ciudad</label>
+            <input type="text" class="form-control fs-3" id="inputCiudadUsuario">
+          </div>
+          <div class="col-md-4">
+            <label for="inputProvinciaUsuario" class="form-label fs-3">Provincia</label>
+            <input type="text" class="form-control fs-3" id="inputProvinciaUsuario">
+          </div>
+          <div class="col-md-2">
+            <label for="inputCP" class="form-label fs-3">CP</label>
+            <input type="text" class="form-control fs-3" id="inputCP">
+          </div>
+          <div class="col-12">
+            <label for="inputPasswordActualUsuario" class="form-label fs-4">Por razones de seguridad deberá ingresar su contraseña para modificar sus datos personales</label>
+            <input type="password" class="form-control w-50 fs-3" id="inputPasswordActualUsuario">
+          </div>
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary fs-2">Modificar Datos Personales</button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <section class="container">
+        <article class="row">
+          <div class="col-sm-12 col-md-4 text-center py-5">
+            <h6 class="mb-3 fs-3">Nuestras Redes Sociales</h6>
+            <a href="https://es-la.facebook.com/" target="_blank" class="me-2 fs-4"
+              ><i class="fa-brands fa-square-facebook fa-2x text-light"></i
+            ></a>
+            <a href="https://www.instagram.com/" target="_blank" class="me-2 fs-4"
+              ><i class="fa-brands fa-square-instagram fa-2x text-light"></i
+            ></a>
+            <a href="https://x.com/Inicio/" target="_blank" class="me-2 fs-4"
+              ><i class="fa-brands fa-x-twitter fa-2x text-light"></i
+            ></a>
+             <a href="https://ar.linkedin.com/" target="_blank" class="me-2 fs-4"
+              ><i class="fa-brands fa-linkedin fa-2x text-light"></i
+            ></a>
+          </div>
+          <div class="col-sm-12 col-md-4 text-center py-2">
+            <img class="w-50" src="../img/logo.png" alt="imglogo" />
+          </div>
+          <div class="col-sm-12 col-md-4 text-center py-5">
+            
+            <h6 class="pb-5 fs-4">
+              Horarios de Atencion:
+
+              <li>Lunes a viernes de 8:00 a 18:00</li>
+              <li>Sabados de 9:00 a 13:00</li>
+              <li><i class="fa-solid fa-headset fa-fw text-light"></i>(012)3456789</li>
+              
+            </h6>
+          </div>
+          <div>
+         
+        </article>
+      </section>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../js/app.js"></script>
+    <script src="../js/navbar.js"></script>
+    <script src="../js/cuenta-usuario.js"></script>
+  </body>
+</html>

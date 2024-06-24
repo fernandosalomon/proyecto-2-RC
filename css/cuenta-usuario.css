@@ -1,0 +1,92 @@
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+}
+
+.btn-barra-lateral:hover {
+  border-left: 3px solid #512de0;
+}
+
+.btn-barra-lateral {
+  border: 0;
+  background-color: transparent;
+  padding-left: 1rem;
+}
+
+.cuenta-usuario-ventana-lateral {
+  flex: 1;
+}
+
+.btn-comprar-favorito {
+  background-color: #512da8;
+  color: #fff;
+  padding: 1rem 1rem;
+  font-size: 1.3rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  justify-self: center;
+  margin-top: 3rem;
+}
+
+.btn-comprar-favorito:hover {
+  background-color: #44258b;
+  transition: all 0.1s ease-in-out;
+  font-weight: 500;
+}
+
+.producto-nombre {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 80%;
+}
+
+.card {
+  height: 280px;
+  width: 230px;
+  z-index: 1;
+}
+
+.card-img-container {
+  width: 18rem;
+  object-fit: contain;
+  position: relative;
+}
+
+.card-img-top {
+  width: 100%;
+}
+
+.btn-eliminar-favorito-container {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  z-index: 2;
+}
+
+.favoritos-vacio-titulo {
+  font-size: 2.5rem;
+}
+
+.btn-redirigir-favoritos {
+  background-color: #512da8;
+  color: #fff;
+  padding: 1rem 4.5rem;
+  font-size: 1.7rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  width: 20%;
+  min-width: 250px;
+}
+
+.btn-redirigir-favoritos:hover {
+  background-color: #44258b;
+  transition: all 0.1s ease-in-out;
+  font-weight: 500;
+}

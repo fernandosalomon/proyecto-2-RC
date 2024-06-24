@@ -32,9 +32,9 @@ if (usuario === "") {
       <button class="nav-link" onclick="(() => {
         
           if (location.pathname.search('pages') === -1) {
-            location.href = './pages/favoritos.html';
+            location.href = './pages/cuenta-usuario.html#Favoritos';
           } else {
-            location.href = './favoritos.html';
+            location.href = './cuenta-usuario.html#Favoritos';
           }
         
         })()">
@@ -71,7 +71,7 @@ if (usuario === "") {
   }
 
   if (usuario.favoritos.length) {
-    floatingBubbleFavorito.innerText = Number(usuario.favorito.length);
+    floatingBubbleFavorito.innerText = Number(usuario.favoritos.length);
     floatingBubbleFavorito.classList.remove("d-none");
   } else {
     floatingBubbleFavorito.classList.add("d-none");
