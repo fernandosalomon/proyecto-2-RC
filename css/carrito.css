@@ -1,6 +1,7 @@
 main {
   min-height: 100%;
   overflow-x: hidden;
+  flex-grow: 1;
 }
 
 .pago-productos {
@@ -40,9 +41,9 @@ input[type="number"]:focus {
 }
 
 .prevent-select {
-  -webkit-user-select: none; 
-  -ms-user-select: none; 
-  user-select: none; 
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .btn-redirigir-carrito {
