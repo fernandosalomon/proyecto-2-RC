@@ -5,12 +5,24 @@ const formularioRegistro = document.getElementById("formularioRegistro");
 const mainWrapper = document.getElementById("mainWrapper");
 const gotoRegistroBtn = document.getElementById("idgotoRegistroBtn");
 const gotoInicioSesionBtn = document.getElementById("idgotoInicioSesionBtn");
+const gotoRegistroBtnSM = document.getElementById("idgotoRegistroBtn--sm");
+const gotoInicioSesionBtnSM = document.getElementById(
+  "idgotoInicioSesionBtn--sm"
+);
 
 gotoRegistroBtn.addEventListener("click", () => {
   mainWrapper.classList.add("active");
 });
 
+gotoRegistroBtnSM.addEventListener("click", () => {
+  mainWrapper.classList.add("active");
+});
+
 gotoInicioSesionBtn.addEventListener("click", () => {
+  mainWrapper.classList.remove("active");
+});
+
+gotoInicioSesionBtnSM.addEventListener("click", () => {
   mainWrapper.classList.remove("active");
 });
 
