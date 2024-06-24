@@ -302,3 +302,9 @@ btnBarraLateralPerfil.addEventListener("click", () => {
     validarFormulario();
   });
 });
+
+if (location.search.split("=")[1] === "Favoritos") {
+  btnBarraLateralFavoritos.click();
+} else if (location.search.split("=")[1] === "Perfil") {
+  btnBarraLateralPerfil.click();
+}

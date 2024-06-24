@@ -23,21 +23,13 @@ if (usuario === "") {
         <i class="bi bi-person-circle"></i>
       </a>
       <ul class="dropdown-menu dropend">
-        <li><a class="dropdown-item" href="#">Editar Usuario</a></li>
+        <li><a class="dropdown-item" id="idBtnEditarUsuario">Editar Usuario</a></li>
         <hr />
         <li><a class="dropdown-item" id="idBtnCerrarSesion">Cerrar Sesión</a></li>
       </ul>
     </li>
     <li class="nav-item">
-      <button class="nav-link" onclick="(() => {
-        
-          if (location.pathname.search('pages') === -1) {
-            location.href = './pages/cuenta-usuario.html#Favoritos';
-          } else {
-            location.href = './cuenta-usuario.html#Favoritos';
-          }
-        
-        })()">
+      <button class="nav-link" onclick="redirigirFavoritos()">
         <i class="bi bi-bag"></i>
         <span class="n-elementos-favoritos" id="idElementosFavoritos"><span>
       </button>
@@ -86,3 +78,22 @@ if (usuario === "") {
     }, 1000);
   });
 }
+
+const redirigirFavoritos = () => {
+  if (location.pathname.search("pages") === -1) {
+    location.href = "./pages/cuenta-usuario.html?seccion=Favoritos";
+  } else {
+    location.href = "./cuenta-usuario.html?seccion=Favoritos";
+  }
+};
+
+const redirigirPerfil = () => {
+  if (location.pathname.search("pages") === -1) {
+    location.href = "./pages/cuenta-usuario.html?seccion=Perfil";
+  } else {
+    location.href = "./cuenta-usuario.html?seccion=Perfil";
+  }
+};
+
+const btnEditarUsuario = document.getElementById("idBtnEditarUsuario");
+btnEditarUsuario.addEventListener("click", redirigirPerfil);
