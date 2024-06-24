@@ -8,8 +8,15 @@
     />
     <meta name="keywords" content="sneakers, ecommerce, shoes, online store" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <title>ZapasMania</title>
-    <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -21,11 +28,13 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
     <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/productos.css" />
     <link rel="stylesheet" href="../css/navbar.css" />
-    <link rel="stylesheet" href="../css/carrito.css" />
     <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/contactos.css">
   </head>
   <body>
+    
     <header>
       <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
@@ -69,46 +78,49 @@
     </header>
 
     <main>
-      <div class="container row gap-5 w-100 flex-grow justify-content-center" id="idMainCarrito">
-        <div id="productosCarrito" class="border rounded p-3 col-12 col-lg-7">
-          <h2>Productos</h2>
-          <table class="table table-borderless fs-4 mt-5">
-            <thead>
-              <tr>
-                <th scope="col">Producto</th>
-                <th scope="col" class="text-center d-none d-md-table-cell">Cantidad</th>
-                <th scope="col" class="text-center d-none d-md-table-cell">Precio</th>
-                <th scope="col"></th>
-              </tr>
-            </thead>
-            <tbody id="idTbodyProductosCarrito" class="align-middle"></tbody>
-          </table>
-        </div>
-        <div id="pagoProductosCarrito" class="pago-productos fs-4 col-2">
-          <table class="table table-borderless">
-            <tbody>
-              <tr>
-                <th scope="row">Subtotal</th>
-                <td id="idSubtotalProductosCarrito" class="fs-4"></td>
-              </tr>
-              <tr>
-                <th scope="row">IVA (21%)</th>
-                <td id="idIVAProductosCarrito" class="fs-4"></td>
-              </tr>
-              <tr>
-                <th scope="row" class="fs-2">Total</th>
-                <td id="idTotalProductosCarrito" class="fs-2 fw-bold"></td>
-              </tr>
-            </tbody>
-          </table>
-          <button type="button" class="btn btn-success w-100 fs-4">
-            Comprar Ahora
-          </button>
+      <div class="container-fluid container-md mt-4">
+        <h3 class=" fs-1 text-center">Dejanos tu mensaje</h3>
+        <div class="d-flex justify-content-center">
+            <form class="border border-dark w-75 p-5 mt-4 rounded">
+              <div class="mb-3"  >
+                  <label class="form-label nombre fs-1 ">Nombre</label>
+                  <input type="text"  class="form-control fs-3" placeholder="Nombre" id="idInputNombre">
+              </div>
+              <div class="mb-3 " >
+                  <label for="idIputEmail" class="form-label email fs-1">Email</label>
+                  <input type="email"  class="form-control fs-3" placeholder="nombre@ejemplo.com " id="idIputEmail">
+              </div>
+              <div class="mb-3 ">
+                  <label for="idInputMensaje" class="form-label mensaje fs-1">Mensaje</label>
+                  <textarea class="form-control fs-3" id="idInputMensaje" rows="3"></textarea>
+              </div>
+              <p class="fs-3 text-danger" id="idMsgErrorContacto"></p>
+              <button class="btn-enviar"  id="idBotonContactanos">Enviar Mensaje</button>   
+            </form> 
         </div>
       </div>
+      <div id="carouselExampleFade" class="carousel slide carousel-fade mt-5 w-100">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="../img/banner_addidas_originals.png" class="d-block w-100" alt="banner_addidas_originals">
+            </div>
+            <div class="carousel-item">
+              <img src="../img/BANNER_ADIDAS_2.webp" class="d-block w-100" alt="BANNER_ADIDAS_2">
+            </div>
+              
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+      </div>
     </main>
-
-    <footer>
+    
+   <footer>
       <section class="container">
         <article class="row">
           <div class="col-sm-12 col-md-4 text-center py-5">
@@ -144,7 +156,7 @@
          
         </article>
       </section>
-    </footer>
+    </footer> 
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
@@ -153,6 +165,8 @@
     ></script>
     <script src="../js/app.js"></script>
     <script src="../js/navbar.js"></script>
-    <script src="../js/carrito.js"></script>
+    <script src="../js/contacto.js"></script>
+  
+    
   </body>
 </html>

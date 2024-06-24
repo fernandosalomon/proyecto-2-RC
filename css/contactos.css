@@ -1,0 +1,39 @@
+.btn-enviar {
+  background-color: #512da8;
+  color: #fff;
+  padding: 1rem 4.5rem;
+  font-size: 1.7rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.btn-enviar:hover {
+  background-color: #44258b;
+  transition: all 0.1s ease-in-out;
+  font-weight: 500;
+}
+
+.btn-enviar--disabled {
+  background-color: #815ed3;
+  color: #fff;
+  padding: 1rem 4.5rem;
+  font-size: 1.7rem;
+  border-radius: 8px;
+  border: none;
+  cursor: default;
+  outline: none;
+}
+
+.btn-enviar--disabled:hover {
+  background-color: #815ed3;
+  color: #fff;
+  padding: 1rem 4.5rem;
+  font-size: 1.7rem;
+  border-radius: 8px;
+  border: none;
+  cursor: default;
+  outline: none;
+  font-weight: 400;
+}

@@ -4,20 +4,23 @@ const thead = document.getElementById("mainPanelThead");
 const tbody = document.getElementById("mainPanelTbody");
 const btnUsuariosNavbar = document.getElementById("navbarBtnUsuarios");
 const btnProductosNavbar = document.getElementById("navbarBtnProductos");
-const sidepanelPillProductos = document.getElementById("sidepanelPillProductos");
+const sidepanelPillProductos = document.getElementById(
+  "sidepanelPillProductos"
+);
 const sidepanelPillUsuarios = document.getElementById("sidepanelPillUsuarios");
 const btnCrearProductos = document.getElementById("idBtnCrearProductosWrapper");
 const modalEditarUsuario = document.getElementById("idModalEditarUsuarioBody");
-const modalEditarProducto = document.getElementById("idModalEditarProductoBody");
+const modalEditarProducto = document.getElementById(
+  "idModalEditarProductoBody"
+);
 const modalCrearProducto = document.getElementById("idModalCrearProductoBody");
 const userRoles = ["usuario", "administrador"];
-const productCategories = ["unisex", "man", "woman","children"];
+const productCategories = ["unisex", "man", "woman", "children"];
 
 sidepanelPillProductos.innerText = `${productos.length}`;
 sidepanelPillUsuarios.innerText = `${usuarios.length}`;
 
 const mainPanelUsuarios = () => {
-
   btnCrearProductos.classList.add("d-none");
 
   thead.innerHTML = `
@@ -25,28 +28,41 @@ const mainPanelUsuarios = () => {
     <th scope="col">Nombre</th>
     <th scope="col">Email</th>
     <th scope="col">Opciones</th>
-  `
+  `;
 
-  tbody.innerHTML = usuarios.map( (usuario) => {
-    return `
+  tbody.innerHTML = usuarios
+    .map((usuario) => {
+      return `
     <tr class="align-middle"> 
       <th scope="row">${usuario.id}</th>
       <td>${usuario.nombre}</td>
       <td>${usuario.email}</td>
       <td>
-        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#idModalEditarUsuario" onclick=editarUsuario(${usuario.id})><i class="bi bi-pencil-square"></i></button>
-        <button type="button" class="btn" onclick=bloquearDesbloquearUsuario(${usuario.id})>
-          ${(usuario.bloqueado)? `<i class="bi bi-person-fill"></i>` : `<i class="bi bi-person-fill-slash"></i>`}        
+        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#idModalEditarUsuario" onclick=editarUsuario(${
+          usuario.id
+        })><i class="bi bi-pencil-square"></i></button>
+        <button type="button" class="btn ${
+          usuario.role === "administrador" ? "d-none" : ""
+        }" onclick=bloquearDesbloquearUsuario(${usuario.id})>
+          ${
+            usuario.bloqueado
+              ? `<i class="bi bi-person-fill"></i>`
+              : `<i class="bi bi-person-fill-slash"></i>`
+          }        
         </button>
-        <button type="button" class="btn btn-danger" onclick=eliminarUsuario(${usuario.id})><i class="bi bi-trash"></i></button>
+        <button type="button" class="btn btn-danger ${
+          usuario.role === "administrador" ? "d-none" : ""
+        }" onclick=eliminarUsuario(${
+        usuario.id
+      })><i class="bi bi-trash"></i></button>
       </td>
     </tr>
-    `
-  }).join("");
-}
+    `;
+    })
+    .join("");
+};
 
 const mainPanelProductos = () => {
-
   btnCrearProductos.classList.remove("d-none");
 
   thead.innerHTML = `
@@ -55,10 +71,11 @@ const mainPanelProductos = () => {
     <th scope="col">Precio</th>
     <th scope="col">Stock</th>
     <th scope="col">Opciones</th>
-  `
+  `;
 
-  tbody.innerHTML = productos.map( (producto) => {
-    return `
+  tbody.innerHTML = productos
+    .map((producto) => {
+      return `
     <tr class="align-middle">
       <th scope="row">${producto.id}</th>
       <td>${producto.title}</td>
@@ -67,68 +84,93 @@ const mainPanelProductos = () => {
       <td>
         <div class="container">
           <div class="row">
-            <button type="button" class="btn col-12 col-md-6 col-lg-3" data-bs-toggle="modal" data-bs-target="#idModalEditarProducto" onclick=editarProducto(${producto.id})>
+            <button type="button" class="btn col-12 col-md-6 col-lg-3" data-bs-toggle="modal" data-bs-target="#idModalEditarProducto" onclick=editarProducto(${
+              producto.id
+            })>
               <i class="bi bi-pencil-square"></i>
             </button>
-            <button type="button" class="btn col-12 col-md-6 col-lg-3" onclick=destacarProducto(${producto.id})>
-              <i class="bi text-warning ${producto.destacado? "bi-star-fill" : "bi-star"}"></i>
+            <button type="button" class="btn col-12 col-md-6 col-lg-3" onclick=destacarProducto(${
+              producto.id
+            })>
+              <i class="bi text-warning ${
+                producto.destacado ? "bi-star-fill" : "bi-star"
+              }"></i>
             </button>
-            <button type="button" class="btn col-12 col-md-6 col-lg-3" onclick=deshabilitarHabilitarProducto(${producto.id})>
-              <i class="bi ${producto.bloqueado? "bi-exclamation":"bi-ban"}"></i>
+            <button type="button" class="btn col-12 col-md-6 col-lg-3" onclick=deshabilitarHabilitarProducto(${
+              producto.id
+            })>
+              <i class="bi ${
+                producto.bloqueado ? "bi-exclamation" : "bi-ban"
+              }"></i>
             </button>
-            <button type="button" class="btn btn-danger col-12 col-md-6 col-lg-3" onclick=eliminarProducto(${producto.id})>
+            <button type="button" class="btn btn-danger col-12 col-md-6 col-lg-3" onclick=eliminarProducto(${
+              producto.id
+            })>
               <i class="bi bi-trash"></i></button>
             </div>
         </div>
       </td>
     </tr>
-    `
-  }).join("");
-}
+    `;
+    })
+    .join("");
+};
 
-btnUsuarios.addEventListener("click", () => location.search = '?=usuarios');
+btnUsuarios.addEventListener("click", () => (location.search = "?=usuarios"));
 
-btnProductos.addEventListener("click", () => location.search = '?=productos');
+btnProductos.addEventListener("click", () => (location.search = "?=productos"));
 
-btnUsuariosNavbar.addEventListener("click", () => location.search = '?=usuarios');
+btnUsuariosNavbar.addEventListener(
+  "click",
+  () => (location.search = "?=usuarios")
+);
 
-btnProductosNavbar.addEventListener("click", () => location.search = '?=productos');
+btnProductosNavbar.addEventListener(
+  "click",
+  () => (location.search = "?=productos")
+);
 
-switch(location.search.split("=")[1]){
+switch (location.search.split("=")[1]) {
   case "usuarios":
     mainPanelUsuarios();
     break;
   case "productos":
     mainPanelProductos();
     break;
-};
-
+}
 
 // CRUD USUARIOS
 
-
 const bloquearDesbloquearUsuario = (idUsuario) => {
-  const posicionUsuarioSeleccionado = usuarios.findIndex((usuario) => 
-    usuario.id === idUsuario
+  const posicionUsuarioSeleccionado = usuarios.findIndex(
+    (usuario) => usuario.id === idUsuario
   );
-  if(confirm("¿Esta seguro que desea " + (usuarios[posicionUsuarioSeleccionado].bloqueado? "desbloquear" : "bloquear") + " a este usuario?")){
-    usuarios[posicionUsuarioSeleccionado].bloqueado = !usuarios[posicionUsuarioSeleccionado].bloqueado;
+  if (
+    confirm(
+      "¿Esta seguro que desea " +
+        (usuarios[posicionUsuarioSeleccionado].bloqueado
+          ? "desbloquear"
+          : "bloquear") +
+        " a este usuario?"
+    )
+  ) {
+    usuarios[posicionUsuarioSeleccionado].bloqueado =
+      !usuarios[posicionUsuarioSeleccionado].bloqueado;
     localStorage.setItem("usuarios", JSON.stringify(usuarios));
     location.reload();
   }
-}
+};
 
 const eliminarUsuario = (idUsuario) => {
-  if(confirm("¿Esta seguro que desea eliminar a este usuario?")){
-    const newUsuarios = usuarios.filter( (usuario) => usuario.id !== idUsuario );
+  if (confirm("¿Esta seguro que desea eliminar a este usuario?")) {
+    const newUsuarios = usuarios.filter((usuario) => usuario.id !== idUsuario);
     localStorage.setItem("usuarios", JSON.stringify(newUsuarios));
     location.reload();
   }
-}
-
+};
 
 const editarUsuario = (idUsuario) => {
-  usuarioSeleccionado = usuarios.find( (usuario) => usuario.id === idUsuario);
+  usuarioSeleccionado = usuarios.find((usuario) => usuario.id === idUsuario);
   modalEditarUsuario.innerHTML = `
      <div class="modal-content">
             
@@ -156,11 +198,18 @@ const editarUsuario = (idUsuario) => {
               </form>
             </div>
       </div>
-  `
+  `;
   const selectUserRole = document.getElementById("idSelectUserRole");
   selectUserRole.innerHTML = `
-    ${userRoles.map((userRol) => `<option ${usuarioSeleccionado.role === userRol? "selected": ""} value=${userRoles.findIndex((ur) => ur === userRol)}>${userRol}</option>`)}
-  `
+    ${userRoles.map(
+      (userRol) =>
+        `<option ${
+          usuarioSeleccionado.role === userRol ? "selected" : ""
+        } value=${userRoles.findIndex(
+          (ur) => ur === userRol
+        )}>${userRol}</option>`
+    )}
+  `;
   const inputNombreUsuario = document.getElementById("idUserNameEditModal");
   const inputEmailUsuario = document.getElementById("idUserEmailEditModal");
 
@@ -172,71 +221,104 @@ const editarUsuario = (idUsuario) => {
     e.preventDefault();
     usuarioSeleccionado.nombre = inputNombreUsuario.value;
     usuarioSeleccionado.email = inputEmailUsuario.value;
-    usuarioSeleccionado.role = selectUserRole.value;
+    usuarioSeleccionado.role = userRoles[selectUserRole.value];
 
-    posicionUsuarioSeleccionado = usuarios.findIndex( (usuario) => usuario.id === usuarioSeleccionado.id);
-    
-    if(confirm("¿Está seguro que desea modificar la información de este usuario?")){
+    posicionUsuarioSeleccionado = usuarios.findIndex(
+      (usuario) => usuario.id === usuarioSeleccionado.id
+    );
+
+    if (
+      confirm(
+        "¿Está seguro que desea modificar la información de este usuario?"
+      )
+    ) {
       usuarios[posicionUsuarioSeleccionado] = usuarioSeleccionado;
       localStorage.setItem("usuarios", JSON.stringify(usuarios));
       location.reload();
     }
   });
-}
+};
 
 // CRUD PRODUCTOS
 
 const deshabilitarHabilitarProducto = (idProducto) => {
-  const posicionProductoSeleccionado = productos.findIndex((producto) => 
-    producto.id === idProducto
+  const posicionProductoSeleccionado = productos.findIndex(
+    (producto) => producto.id === idProducto
   );
-  if(confirm("¿Esta seguro que desea " + (productos[posicionProductoSeleccionado].bloqueado? "habilitar" : "deshabilitar") + " este producto?")){
-    productos[posicionProductoSeleccionado].bloqueado = !productos[posicionProductoSeleccionado].bloqueado;
+  if (
+    confirm(
+      "¿Esta seguro que desea " +
+        (productos[posicionProductoSeleccionado].bloqueado
+          ? "habilitar"
+          : "deshabilitar") +
+        " este producto?"
+    )
+  ) {
+    productos[posicionProductoSeleccionado].bloqueado =
+      !productos[posicionProductoSeleccionado].bloqueado;
     localStorage.setItem("productos", JSON.stringify(productos));
     location.reload();
   }
 };
 
 const destacarProducto = (idProducto) => {
-  const posicionProductoSeleccionado = productos.findIndex((producto) => 
-    producto.id === idProducto
+  const posicionProductoSeleccionado = productos.findIndex(
+    (producto) => producto.id === idProducto
   );
 
-  const productosDestacados= productos.filter( (producto) => producto.destacado);
-  
+  const productosDestacados = productos.filter(
+    (producto) => producto.destacado
+  );
 
-  if(productosDestacados.length){
-   
-    const posicionProductoDestacado = productos.findIndex((producto) => producto.id === productosDestacados[0].id);
-    if(productosDestacados[0].id !== productos[posicionProductoSeleccionado].id){
-      if(confirm("¿Esta seguro que cambiar el producto destacado?")){
-        productos[posicionProductoSeleccionado].destacado = !productos[posicionProductoSeleccionado].destacado;
+  if (productosDestacados.length) {
+    const posicionProductoDestacado = productos.findIndex(
+      (producto) => producto.id === productosDestacados[0].id
+    );
+    if (
+      productosDestacados[0].id !== productos[posicionProductoSeleccionado].id
+    ) {
+      if (confirm("¿Esta seguro que cambiar el producto destacado?")) {
+        productos[posicionProductoSeleccionado].destacado =
+          !productos[posicionProductoSeleccionado].destacado;
         productos[posicionProductoDestacado].destacado = false;
         localStorage.setItem("productos", JSON.stringify(productos));
         location.reload();
       }
-    }else{
+    } else {
       alert("Debe haber al menos un producto destacado");
     }
-    }else{
-      if(confirm("¿Esta seguro que desea " + (productos[posicionProductoSeleccionado].destacado? "quitar de destacados" : "destacar") + " este producto?")){
-        productos[posicionProductoSeleccionado].destacado = !productos[posicionProductoSeleccionado].destacado;
-        localStorage.setItem("productos", JSON.stringify(productos));
-        location.reload();
-      }
+  } else {
+    if (
+      confirm(
+        "¿Esta seguro que desea " +
+          (productos[posicionProductoSeleccionado].destacado
+            ? "quitar de destacados"
+            : "destacar") +
+          " este producto?"
+      )
+    ) {
+      productos[posicionProductoSeleccionado].destacado =
+        !productos[posicionProductoSeleccionado].destacado;
+      localStorage.setItem("productos", JSON.stringify(productos));
+      location.reload();
     }
-}
+  }
+};
 
 const eliminarProducto = (idProducto) => {
-  if(confirm("¿Esta seguro que desea eliminar este producto?")){
-    const newProductos = productos.filter( (producto) => producto.id !== idProducto );
+  if (confirm("¿Esta seguro que desea eliminar este producto?")) {
+    const newProductos = productos.filter(
+      (producto) => producto.id !== idProducto
+    );
     localStorage.setItem("productos", JSON.stringify(newProductos));
     location.reload();
   }
 };
 
 const editarProducto = (idProducto) => {
-  const productoSeleccionado = productos.find((producto) => producto.id === idProducto);
+  const productoSeleccionado = productos.find(
+    (producto) => producto.id === idProducto
+  );
   modalEditarProducto.innerHTML = `
      <div class="modal-content">
             
@@ -289,17 +371,30 @@ const editarProducto = (idProducto) => {
                     </form>
             </div>
       </div>
-  `
+  `;
   const inputNombreProducto = document.getElementById("idNombreProductoModal");
   const inputImagenProducto = document.getElementById("idImagenProductoModal");
-  const inputCategoriaProducto = document.getElementById("idCategoriaProductoModal");
-  const inputDescripcionProducto = document.getElementById("idDescripcionProductoModal");
-  const inputCantidadStockProducto = document.getElementById("idCantidadStockProductoModal");
+  const inputCategoriaProducto = document.getElementById(
+    "idCategoriaProductoModal"
+  );
+  const inputDescripcionProducto = document.getElementById(
+    "idDescripcionProductoModal"
+  );
+  const inputCantidadStockProducto = document.getElementById(
+    "idCantidadStockProductoModal"
+  );
   const inputPrecioProducto = document.getElementById("idPrecioProductoModal");
 
   inputCategoriaProducto.innerHTML = `
-    ${productCategories.map((category) => `<option ${productoSeleccionado.category === category? "selected": ""} value=${productCategories.findIndex((cat) => cat === category)}>${category}</option>`)}
-  `
+    ${productCategories.map(
+      (category) =>
+        `<option ${
+          productoSeleccionado.category === category ? "selected" : ""
+        } value=${productCategories.findIndex(
+          (cat) => cat === category
+        )}>${category}</option>`
+    )}
+  `;
 
   inputNombreProducto.value = productoSeleccionado.title;
   inputImagenProducto.value = productoSeleccionado.image;
@@ -316,17 +411,23 @@ const editarProducto = (idProducto) => {
     productoSeleccionado.cantidadStock = inputCantidadStockProducto.value;
     productoSeleccionado.price = inputPrecioProducto.value;
     productoSeleccionado.category = inputCategoriaProducto.value;
-    
-    const posicionProductoSeleccionado = productos.findIndex( (producto) => producto.id === productoSeleccionado.id);
-    
-    if(confirm("¿Está seguro que desea modificar la información de este producto?")){
+
+    const posicionProductoSeleccionado = productos.findIndex(
+      (producto) => producto.id === productoSeleccionado.id
+    );
+
+    if (
+      confirm(
+        "¿Está seguro que desea modificar la información de este producto?"
+      )
+    ) {
       productos[posicionProductoSeleccionado] = productoSeleccionado;
       console.log(productos);
       localStorage.setItem("productos", JSON.stringify(productos));
       location.reload();
     }
   });
-}
+};
 
 const crearProducto = () => {
   modalCrearProducto.innerHTML = `
@@ -381,17 +482,28 @@ const crearProducto = () => {
                     </form>
             </div>
       </div>
-  `
+  `;
   const inputNombreProducto = document.getElementById("idNombreProductoModal");
   const inputImagenProducto = document.getElementById("idImagenProductoModal");
-  const inputCategoriaProducto = document.getElementById("idCategoriaProductoModal");
-  const inputDescripcionProducto = document.getElementById("idDescripcionProductoModal");
-  const inputCantidadStockProducto = document.getElementById("idCantidadStockProductoModal");
+  const inputCategoriaProducto = document.getElementById(
+    "idCategoriaProductoModal"
+  );
+  const inputDescripcionProducto = document.getElementById(
+    "idDescripcionProductoModal"
+  );
+  const inputCantidadStockProducto = document.getElementById(
+    "idCantidadStockProductoModal"
+  );
   const inputPrecioProducto = document.getElementById("idPrecioProductoModal");
 
   inputCategoriaProducto.innerHTML = `
-    ${productCategories.map((category) => `<option value=${productCategories.findIndex((cat) => cat === category)}>${category}</option>`)}
-  `
+    ${productCategories.map(
+      (category) =>
+        `<option value=${productCategories.findIndex(
+          (cat) => cat === category
+        )}>${category}</option>`
+    )}
+  `;
 
   const btnEditarProducto = document.getElementById("idBtnEditarProductoModal");
   btnEditarProducto.addEventListener("click", (e) => {
@@ -406,14 +518,14 @@ const crearProducto = () => {
     nuevoProducto.category = inputCategoriaProducto.value;
     nuevoProducto.bloqueado = false;
     nuevoProducto.destacado = false;
-    
-    if(confirm("¿Está seguro que desea crear un nuevo producto?")){
+
+    if (confirm("¿Está seguro que desea crear un nuevo producto?")) {
       productos.push(nuevoProducto);
       localStorage.setItem("productos", JSON.stringify(productos));
       location.reload();
     }
   });
-}
+};
 
 const btnCrearProducto = document.getElementById("idBtnCrearProductos");
-btnCrearProducto.addEventListener("click", crearProducto); 
+btnCrearProducto.addEventListener("click", crearProducto);

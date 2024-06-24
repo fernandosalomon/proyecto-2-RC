@@ -77,6 +77,9 @@ if (usuario === "") {
       location.href = "../index.html";
     }, 1000);
   });
+
+  const btnEditarUsuario = document.getElementById("idBtnEditarUsuario");
+  btnEditarUsuario.addEventListener("click", redirigirPerfil);
 }
 
 const redirigirFavoritos = () => {
@@ -94,6 +97,3 @@ const redirigirPerfil = () => {
     location.href = "./cuenta-usuario.html?seccion=Perfil";
   }
 };
-
-const btnEditarUsuario = document.getElementById("idBtnEditarUsuario");
-btnEditarUsuario.addEventListener("click", redirigirPerfil);

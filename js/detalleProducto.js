@@ -31,14 +31,18 @@ detallesProducto.innerHTML = `
             <button type="button" class="btn-agregar-carrito btn-primary text-uppercase w-75 fs-2" onclick="agregarProductoCarrito(${
               productosSeleccionado.id
             })">Agregar al carrito</button>
-            <button type="button" class="btn text-uppercase" onclick="agregarProductoFavoritos(${
-              productosSeleccionado.id
-            })"><i class="bi ${
-  usuario.favoritos.filter(
-    (producto) => producto.id === productosSeleccionado.id
-  ).length
-    ? "bi-heart-fill"
-    : "bi-heart"
+            <button type="button" class="btn text-uppercase ${
+              usuario ? "" : "d-none"
+            }" onclick="agregarProductoFavoritos(${
+  productosSeleccionado.id
+})"><i class="bi ${
+  usuario
+    ? usuario.favoritos.filter(
+        (producto) => producto.id === productosSeleccionado.id
+      ).length
+      ? "bi-heart-fill"
+      : "bi-heart"
+    : ""
 } pe-5 btn-favorito"></i></button>
           </div>
           </aside>
@@ -71,19 +75,24 @@ const seleccionarTalle = (talle) => {
 };
 
 const agregarProductoCarrito = (idProducto) => {
-  const existeProductoCarrito = usuario.carrito.filter(
-    (producto) => producto.id === idProducto
-  );
+  if (usuario) {
+    const existeProductoCarrito = usuario.carrito.filter(
+      (producto) => producto.id === idProducto
+    );
 
-  if (!existeProductoCarrito.length) {
-    usuario.carrito.push({
-      ...productosSeleccionado,
-      talle: talleSeleccionado,
-    });
-    sessionStorage.setItem("usuario", JSON.stringify(usuario));
-    location.reload();
+    if (!existeProductoCarrito.length) {
+      usuario.carrito.push({
+        ...productosSeleccionado,
+        talle: talleSeleccionado,
+      });
+      sessionStorage.setItem("usuario", JSON.stringify(usuario));
+      location.reload();
+    } else {
+      alert("El producto ya se encuenctra en el carrito");
+    }
   } else {
-    alert("El producto ya se encuenctra en el carrito");
+    alert("Debe ser un usuario registrado para agregar productos al carrito");
+    location.href = "./login-registro.html";
   }
 };
 
