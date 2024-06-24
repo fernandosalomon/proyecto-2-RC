@@ -146,7 +146,7 @@ btnBarraLateralPerfil.addEventListener("click", () => {
             <input type="password" class="form-control w-50 fs-3" id="inputPasswordActualUsuario">
           </div>
           <div class="col-12">
-            <button type="submit" class="btn btn-primary fs-2" id="idBtnModificarDatosUsuario">Modificar Datos Personales</button>
+            <button type="submit" class="btn-modificar-usuario fs-2" id="idBtnModificarDatosUsuario">Modificar Datos Personales</button>
           </div>
         </form>
   `;
@@ -301,6 +301,10 @@ btnBarraLateralPerfil.addEventListener("click", () => {
     e.preventDefault();
     validarFormulario();
   });
+});
+
+btnBarraLateralPedidos.addEventListener("click", () => {
+  location.href = "./error404.html";
 });
 
 if (location.search.split("=")[1] === "Favoritos") {

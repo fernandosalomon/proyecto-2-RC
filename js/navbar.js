@@ -78,22 +78,22 @@ if (usuario === "") {
     }, 1000);
   });
 
+  const redirigirFavoritos = () => {
+    if (location.pathname.search("pages") === -1) {
+      location.href = "./pages/cuenta-usuario.html?seccion=Favoritos";
+    } else {
+      location.href = "./cuenta-usuario.html?seccion=Favoritos";
+    }
+  };
+
+  const redirigirPerfil = () => {
+    if (location.pathname.search("pages") === -1) {
+      location.href = "./pages/cuenta-usuario.html?seccion=Perfil";
+    } else {
+      location.href = "./cuenta-usuario.html?seccion=Perfil";
+    }
+  };
+
   const btnEditarUsuario = document.getElementById("idBtnEditarUsuario");
   btnEditarUsuario.addEventListener("click", redirigirPerfil);
 }
-
-const redirigirFavoritos = () => {
-  if (location.pathname.search("pages") === -1) {
-    location.href = "./pages/cuenta-usuario.html?seccion=Favoritos";
-  } else {
-    location.href = "./cuenta-usuario.html?seccion=Favoritos";
-  }
-};
-
-const redirigirPerfil = () => {
-  if (location.pathname.search("pages") === -1) {
-    location.href = "./pages/cuenta-usuario.html?seccion=Perfil";
-  } else {
-    location.href = "./cuenta-usuario.html?seccion=Perfil";
-  }
-};
