@@ -5,6 +5,19 @@
   background-color: transparent;
 }
 
+.navbar-toggler {
+  font-size: 3rem;
+  border: none;
+  box-shadow: none;
+  outline: none;
+}
+
+.navbar-toggler:focus {
+  border: none;
+  box-shadow: none;
+  outline: none;
+}
+
 .logo-container {
   width: 150px;
   object-fit: cover;
@@ -32,6 +45,16 @@ i {
 .dropdown-menu hr {
   width: 80%;
   margin: 10px auto;
+}
+
+.dropdown-item {
+  cursor: pointer;
+}
+
+.dropdown-item:focus,
+.dropdown-item:active {
+  background-color: #f8f9fa;
+  color: black;
 }
 
 .nav-link {
