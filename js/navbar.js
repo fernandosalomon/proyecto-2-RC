@@ -3,7 +3,7 @@ const userOptions = document.getElementById("userOptions");
 if (usuario === "") {
   userOptions.innerHTML = `
 
-  <button type="button" class="btn-1" id="idBtnIngresar">Ingresar</button>
+  <button type="button" class="btn-1 mt-3" id="idBtnIngresar">Ingresar</button>
   `;
 
   const btnIngresar = document.getElementById("idBtnIngresar");
