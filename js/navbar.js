@@ -29,7 +29,7 @@ if (usuario === "") {
       </ul>
     </li>
     <li class="nav-item order-md-2 order-1">
-      <button class="nav-link" onclick="redirigirFavoritos()">
+      <button class="nav-link" id="idBtnRedirigirFavoritos">
         <i class="bi bi-bag"></i>
         <span class="n-elementos-favoritos" id="idElementosFavoritos"><span>
       </button>
@@ -78,13 +78,16 @@ if (usuario === "") {
     }, 1000);
   });
 
-  const redirigirFavoritos = () => {
+  const btnRedirigirFavoritos = document.getElementById(
+    "idBtnRedirigirFavoritos"
+  );
+  btnRedirigirFavoritos.addEventListener("click", () => {
     if (location.pathname.search("pages") === -1) {
       location.href = "./pages/cuenta-usuario.html?seccion=Favoritos";
     } else {
       location.href = "./cuenta-usuario.html?seccion=Favoritos";
     }
-  };
+  });
 
   const redirigirPerfil = () => {
     if (location.pathname.search("pages") === -1) {
