@@ -4,7 +4,7 @@ body {
 }
 
 main {
-  padding: 1rem 3rem;
+  padding: 1rem 0;
   flex: 1;
   height: 100%;
 }
@@ -23,6 +23,7 @@ main {
   flex-direction: column;
   gap: 2rem;
   z-index: 2;
+  margin-left: 2rem;
 }
 
 .hero-text__container h2 {
@@ -32,7 +33,7 @@ main {
 
 .hero-text__container p {
   font-size: 2rem;
-  padding-right: 10rem;
+  padding-right: 7rem;
 }
 
 .producto-destacado-hero {
@@ -49,7 +50,7 @@ main {
 }
 
 .hero-product__container img {
-  transform: translateX(-60px) scaleX(-1) rotate(20deg);
+  transform: scaleX(-1) rotate(20deg);
   filter: drop-shadow(-8px 30px 40px #512de8);
   z-index: 1;
 }
@@ -105,7 +106,7 @@ main {
   border: none;
   cursor: pointer;
   outline: none;
-  width: 60%;
+  width: 100%;
   align-items: start;
 }
 
@@ -124,8 +125,13 @@ main {
     overflow-y: scroll;
   }
 
+  .hero-text__container h2 {
+    text-align: center;
+  }
+
   .hero-text__container p {
     padding-right: 0;
+    text-align: center;
   }
   .btn-3 {
     width: 100%;
@@ -135,6 +141,17 @@ main {
     text-align: start;
   }
   .hero-product__container {
-    padding: 5rem;
+    margin-top: 4rem;
+    padding: 0;
+  }
+  .hero-product-description {
+    margin-top: 5rem;
+    align-self: center;
+  }
+  .hero-product-description p {
+    font-size: 1.8rem;
+    text-align: center;
+    white-space: wrap;
+    font-weight: 700;
   }
 }
