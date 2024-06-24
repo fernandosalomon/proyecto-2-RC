@@ -87,6 +87,13 @@ const agregarProductoCarrito = (idProducto) => {
         cantidad: 1,
       });
       sessionStorage.setItem("usuario", JSON.stringify(usuario));
+
+      posicionUsuario = usuarios.findIndex(
+        (usuarioDB) => usuarioDB.id === usuario.id
+      );
+      usuarios[posicionUsuario] = usuario;
+      localStorage.setItem("usuarios", JSON.stringify(usuarios));
+
       customAlertCaller(
         "Producto añadido a Carrito",
         "Su producto se agrego al carrito con exito.",
@@ -121,12 +128,25 @@ const agregarProductoFavoritos = (idProducto) => {
       talle: talleSeleccionado,
     });
     sessionStorage.setItem("usuario", JSON.stringify(usuario));
+
+    posicionUsuario = usuarios.findIndex(
+      (usuarioDB) => usuarioDB.id === usuario.id
+    );
+    usuarios[posicionUsuario] = usuario;
+    localStorage.setItem("usuarios", JSON.stringify(usuarios));
+
     location.reload();
   } else {
     usuario.favoritos = usuario.favoritos.filter(
       (producto) => producto.id !== idProducto
     );
     sessionStorage.setItem("usuario", JSON.stringify(usuario));
+
+    posicionUsuario = usuarios.findIndex(
+      (usuarioDB) => usuarioDB.id === usuario.id
+    );
+    usuarios[posicionUsuario] = usuario;
+    localStorage.setItem("usuarios", JSON.stringify(usuarios));
     location.reload();
   }
 };
